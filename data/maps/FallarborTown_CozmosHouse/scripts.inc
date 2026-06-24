@@ -7,10 +7,12 @@ lock
 faceplayer
 msgbox Text_TakePokemon, MSGBOX_YESNO
 compare VAR_RESULT, 0
-goto_if_eq Text_AnswerNo
+goto_if_eq Script_AnswerNo
 msgbox Text_AnswerYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
 setflag FLAG_SYS_POKEMON_GET
+removeobject LOCALID_Starter_Bag
+setflag HIDE_STARTER_BAG
 waitfanfare
 	release
 	end
