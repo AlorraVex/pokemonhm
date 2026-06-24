@@ -12,7 +12,7 @@ msgbox Text_AnswerYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
 setflag FLAG_SYS_POKEMON_GET
 removeobject LOCALID_Starter_Bag
-setflag HIDE_STARTER_BAG
+setflag FLAG_HIDE_STARTER_BAG
 waitfanfare
 	release
 	end
@@ -23,6 +23,6 @@ Text_TakePokemon:
 Text_AnswerYes:
 	.string "{PLAYER} received a Pichu!$"
 
-Text_AnswerNo:
+Script_AnswerNo:
 	.string "You decided not to take the Pokeball.$"
 	
