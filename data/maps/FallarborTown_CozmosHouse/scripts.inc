@@ -11,7 +11,7 @@ goto_if_eq Event_AnswerNo
 goto Event_AnswerYes
 
 Event_AnswerNo:
-    msgbox Text_ChoiceYes, MSGBOX_DEFAULT
+    msgbox Text_ChoiceNo, MSGBOX_DEFAULT
     release
     end
 
@@ -19,7 +19,7 @@ Event_AnswerYes:
     msgbox Text_ChoiceYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
 setflag FLAG_SYS_POKEMON_GET
-removeobject LOCALID_Starter_Bag
+removeobject 1
 setflag FLAG_HIDE_STARTER_BAG
 waitfanfare
     release
