@@ -7,22 +7,30 @@ lock
 faceplayer
 msgbox Text_TakePokemon, MSGBOX_YESNO
 compare VAR_RESULT, 0
-goto_if_eq Script_AnswerNo
-msgbox Text_AnswerYes, MSGBOX_DEFAULT
+goto_if_eq Event_AnswerNo
+goto Event_AnswerYes
+
+Event_AnswerNo:
+    msgbox Text_ChoiceYes, MSGBOX_DEFAULT
+    release
+    end
+
+Event_AnswerYes:
+    msgbox Text_ChoiceYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
 setflag FLAG_SYS_POKEMON_GET
 removeobject LOCALID_Starter_Bag
 setflag FLAG_HIDE_STARTER_BAG
 waitfanfare
-	release
-	end
+    release
+    end
 
 Text_TakePokemon:
 	.string "There's a Pokeball inside. Take it?$"
 
-Text_AnswerYes:
+Text_ChoiceYes:
 	.string "{PLAYER} received a Pichu!$"
 
-Script_AnswerNo:
+Text_ChoiceNo:
 	.string "You decided not to take the Pokeball.$"
 	
