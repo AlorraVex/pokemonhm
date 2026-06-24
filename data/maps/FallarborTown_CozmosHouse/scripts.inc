@@ -30,8 +30,8 @@ playfanfare MUS_OBTAIN_ITEM
     end
 
 Text_TakePokemon:
-	.string "There's a bag with a Pokeball inside.\n
-	.string Take it?\l$"
+	.string "There's a bag with a Pokeball inside.\n"
+	.string "Take it?\l$"
 
 Text_ChoiceYes:
 	.string "{PLAYER} received a Pichu and the Bag!$"
