@@ -16,21 +16,24 @@ Event_AnswerNo:
     end
 
 Event_AnswerYes:
-    msgbox Text_ChoiceYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
 setflag FLAG_SYS_POKEMON_GET
+
 removeobject 1
 setflag FLAG_HIDE_STARTER_BAG
-waitfanfare
+playfanfare MUS_OBTAIN_ITEM
+    msgbox Text_ChoiceYes, MSGBOX_DEFAULT
+    waitfanfare
+	
     release
     end
 
 Text_TakePokemon:
-	.string "There's a Pokeball inside. Take it?$"
+	.string "There's a bag with a Pokeball inside. Take it?$"
 
 Text_ChoiceYes:
-	.string "{PLAYER} received a Pichu!$"
+	.string "{PLAYER} received a Pichu and a bag!$"
 
 Text_ChoiceNo:
-	.string "You decided not to take the Pokeball.$"
+	.string "You decided not to take it.$"
 	
