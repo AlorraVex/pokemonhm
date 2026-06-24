@@ -5,9 +5,11 @@ FallarborTown_EventScript_Starter::
 
 lock
 faceplayer
-msgbox Text_TakePokemon, MSGBOX_DEFAULT
+msgbox Text_TakePokemon, MSGBOX_YESNO
+compare VAR_RESULT, 0
+goto_if_eq Text_AnswerNo
+msgbox Text_AnswerYes, MSGBOX_DEFAULT
 givemon SPECIES_PICHU, 5, ITEM_NONE
-msgbox Text_ReceivedPichu, MSGBOX_DEFAULT
 setflag FLAG_SYS_POKEMON_GET
 waitfanfare
 	release
@@ -16,6 +18,9 @@ waitfanfare
 Text_TakePokemon:
 	.string "There's a Pokeball inside. Take it?$"
 
-Text_ReceivedPichu:
+Text_AnswerYes:
 	.string "{PLAYER} received a Pichu!$"
+
+Text_AnswerNo:
+	.string "You decided not to take the Pokeball.$"
 	
