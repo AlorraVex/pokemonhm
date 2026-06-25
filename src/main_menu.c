@@ -2144,16 +2144,10 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 
 void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
 {
-    const u8 *name;
-    u8 i;
-
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        name = sMalePresetNames[nameId];
-    else
-        name = sFemalePresetNames[nameId];
-    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
-        gSaveBlock2Ptr->playerName[i] = name[i];
-    gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
+    gSaveBlock2Ptr->playerName[0] = CHAR_Y;
+    gSaveBlock2Ptr->playerName[1] = CHAR_o;
+    gSaveBlock2Ptr->playerName[2] = CHAR_u;
+    gSaveBlock2Ptr->playerName[3] = EOS;
 }
 
 static void CreateMainMenuErrorWindow(const u8 *str)
