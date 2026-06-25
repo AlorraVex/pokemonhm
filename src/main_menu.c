@@ -1307,8 +1307,13 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     SetGpuReg(REG_OFFSET_BLDALPHA, 0);
     SetGpuReg(REG_OFFSET_BLDY, 0);
     gSaveBlock2Ptr->playerGender = MALE;
-    NewGameBirchSpeech_SetDefaultPlayerName = You;
-    
+    NewGameBirchSpeech_SetDefaultPlayerName(0);
+{
+    gSaveBlock2Ptr->playerName[0] = CHAR_Y;
+    gSaveBlock2Ptr->playerName[1] = CHAR_o;
+    gSaveBlock2Ptr->playerName[2] = CHAR_u;
+    gSaveBlock2Ptr->playerName[3] = EOS;
+}
     
     
     ScanlineEffect_Stop();
