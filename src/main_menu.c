@@ -1310,8 +1310,8 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     NewGameBirchSpeech_SetDefaultPlayerName(0);
 {
     gSaveBlock2Ptr->playerName[0] = CHAR_Y;
-    gSaveBlock2Ptr->playerName[1] = CHAR_o;
-    gSaveBlock2Ptr->playerName[2] = CHAR_u;
+    gSaveBlock2Ptr->playerName[1] = CHAR_O;
+    gSaveBlock2Ptr->playerName[2] = CHAR_U;
     gSaveBlock2Ptr->playerName[3] = EOS;
 }
     
@@ -2145,8 +2145,8 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
 {
     gSaveBlock2Ptr->playerName[0] = CHAR_Y;
-    gSaveBlock2Ptr->playerName[1] = CHAR_o;
-    gSaveBlock2Ptr->playerName[2] = CHAR_u;
+    gSaveBlock2Ptr->playerName[1] = CHAR_O;
+    gSaveBlock2Ptr->playerName[2] = CHAR_U;
     gSaveBlock2Ptr->playerName[3] = EOS;
 }
 
