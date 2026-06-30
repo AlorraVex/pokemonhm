@@ -21,7 +21,9 @@ script DesertUnderPass_EventScript_Starter{
             removeobject(1)
             call(NicknameBoxMon)
         }
-        else   
+        else{
+            msgbox("You don't have room.")
+        }
     }
     else{
         msgbox(Starter_NotChosen)
@@ -52,10 +54,12 @@ script NicknameBoxMon{
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_NameRecievedBoxMon)
     }
-    call(common_EventScript_TransferredToPC)
+    msgbox("Pichu was transferred to the PC.")
+
 
 }
 
 text Starter_NotChosen{
-    "You chose to leave it."
+    "You decided to leave it."
 }
+
