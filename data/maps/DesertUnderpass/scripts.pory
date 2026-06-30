@@ -1,6 +1,6 @@
 mapscripts DesertUnderPass_MapScripts {}
 
-script DesertUnderPass_EventScript_Starter{
+script DesertUnderpass_EventScript_Starter{
 
     lockall
     msgbox(StarterChoice, MSGBOX_YESNO)
@@ -34,6 +34,27 @@ script DesertUnderPass_EventScript_Starter{
 
 }
 
+script_DesertUnderpass_EventScript_Generator{
+    lockall
+    msgbox(UseThundershock, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        EventScript_UseFlash
+        animate flash 1
+        setflashlevel 1
+    }
+    releaseall
+    end
+    
+    
+
+}
+
+script UseThundershock{
+    if(var(VAR_RESULT) == YES)
+    msgbox("Pichu powered up the generator \n
+    with Thundershock.")
+}
+
 text StarterChoice{
     ("There's a Pokeball in the bag. \p 
     Take it?")
@@ -55,7 +76,6 @@ script NicknameBoxMon{
         call(Common_EventScript_NameRecievedBoxMon)
     }
     msgbox("Pichu was transferred to the PC.")
-
 
 }
 
