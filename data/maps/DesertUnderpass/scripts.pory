@@ -34,10 +34,11 @@ script DesertUnderpass_EventScript_Starter{
 
 }
 
-script_DesertUnderpass_EventScript_Generator{
+script DesertUnderpass_EventScript_Generator{
     lockall
-    msgbox(UseThundershock, MSGBOX_YESNO)
+    msgbox(PowerGenerator, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        msgbox(UseThundershock)
         EventScript_UseFlash
         animate flash 1
         setflashlevel 1
@@ -45,8 +46,12 @@ script_DesertUnderpass_EventScript_Generator{
     releaseall
     end
     
-    
 
+}
+
+text PowerGenerator{
+    ("Pichu wants to use Thundershock. \p 
+    Let it?")
 }
 
 script UseThundershock{
