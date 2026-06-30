@@ -1,0 +1,61 @@
+mapscripts DesertUnderPass_MapScripts {}
+
+script DesertUnderPass_EventScript_Starter{
+
+    lockall
+    msgbox(StarterChoice, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_PICHU, 5, ITEM_NONE)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You recieved a Pichu and the Bag.")
+            removeobject(1)
+            setflag(FLAG_HIDE_STARTER_BAG)
+            setflag(FLAG_SYS_BAG_GET)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Pichu was sent to the PC.")
+            removeobject(1)
+            call(NicknameBoxMon)
+        }
+        else   
+    }
+    else{
+        msgbox(Starter_NotChosen)
+    }
+    waitmessage
+    releaseall
+    end
+
+}
+
+text StarterChoice{
+    ("There's a Pokeball in the bag. \p 
+    Take it?")
+}
+
+script NicknamePartyMon{
+    msgbox("Give Pichu a nickname?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameRecievedPartyMon)
+    }
+
+}
+
+script NicknameBoxMon{
+
+    msgbox("Give Pichu a nickname?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameRecievedBoxMon)
+    }
+    call(common_EventScript_TransferredToPC)
+
+}
+
+text Starter_NotChosen{
+    "You chose to leave it."
+}
