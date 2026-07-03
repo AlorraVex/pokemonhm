@@ -41,7 +41,7 @@ script DesertUnderpass_EventScript_Generator{
         msgbox(UseThundershock)
         EventScript_UseFlash
         animate flash
-        setflashlevel 1
+        setflashlevel
     }
     releaseall
     end
