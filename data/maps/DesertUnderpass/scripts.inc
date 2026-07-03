@@ -70,7 +70,7 @@ DesertUnderpass_EventScript_Generator::
 	compare VAR_RESULT, YES
 	goto_if_eq DesertUnderpass_EventScript_Generator_2
 DesertUnderpass_EventScript_Generator_1:
-# 53 "data/maps/DesertUnderpass/scripts.pory"
+# 54 "data/maps/DesertUnderpass/scripts.pory"
 	releaseall
 	end
 
@@ -82,49 +82,51 @@ DesertUnderpass_EventScript_Generator_2:
 # 44 "data/maps/DesertUnderpass/scripts.pory"
 	setflashlevel 0
 # 45 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 4, 9, 0x2C3, 1
+	setmetatile 4, 9, 0x2E7, 0
 # 46 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 5, 9, 0x2C4, 0
+	setmetatile 5, 9, 0x2E7, 0
 # 47 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 6, 9, 0x2C5, 1
+	setmetatile 6, 9, 0x2E7, 0
 # 48 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 4, 10, 0x2CB, 1
+	setmetatile 4, 10, 0x2E6, 0
 # 49 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 5, 10, 0x2CC, 1
+	setmetatile 5, 10, 0x2E6, 0
 # 50 "data/maps/DesertUnderpass/scripts.pory"
-	setmetatile 6, 10, 0x2CD, 1
+	setmetatile 6, 10, 0x2E6, 0
+# 51 "data/maps/DesertUnderpass/scripts.pory"
+	special DrawWholeMapView
 	goto DesertUnderpass_EventScript_Generator_1
 
 
 NicknamePartyMon::
-# 75 "data/maps/DesertUnderpass/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 76 "data/maps/DesertUnderpass/scripts.pory"
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+# 77 "data/maps/DesertUnderpass/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 77 "data/maps/DesertUnderpass/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 78 "data/maps/DesertUnderpass/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 79 "data/maps/DesertUnderpass/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 85 "data/maps/DesertUnderpass/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 86 "data/maps/DesertUnderpass/scripts.pory"
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+# 87 "data/maps/DesertUnderpass/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 89 "data/maps/DesertUnderpass/scripts.pory"
+# 90 "data/maps/DesertUnderpass/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 87 "data/maps/DesertUnderpass/scripts.pory"
+# 88 "data/maps/DesertUnderpass/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -142,28 +144,28 @@ DesertUnderpass_EventScript_Starter_Text_2:
 	.string "You don't have room.$"
 
 NicknamePartyMon_Text_0:
-# 75 "data/maps/DesertUnderpass/scripts.pory"
+# 76 "data/maps/DesertUnderpass/scripts.pory"
 	.string "Give Pichu a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 89 "data/maps/DesertUnderpass/scripts.pory"
+# 90 "data/maps/DesertUnderpass/scripts.pory"
 	.string "Pichu was transferred to the PC.$"
 
 PowerGenerator::
-# 59 "data/maps/DesertUnderpass/scripts.pory"
+# 60 "data/maps/DesertUnderpass/scripts.pory"
 	.string "Pichu wants to use Thundershock. \n"
 	.string "Let it?$"
 
 UseThundershock::
-# 64 "data/maps/DesertUnderpass/scripts.pory"
+# 65 "data/maps/DesertUnderpass/scripts.pory"
 	.string "Pichu powered up the generator\n"
 	.string "with Thundershock.$"
 
 StarterChoice::
-# 69 "data/maps/DesertUnderpass/scripts.pory"
+# 70 "data/maps/DesertUnderpass/scripts.pory"
 	.string "There's a Pokeball in the bag. \n"
 	.string "Take it?$"
 
 Starter_NotChosen::
-# 93 "data/maps/DesertUnderpass/scripts.pory"
+# 94 "data/maps/DesertUnderpass/scripts.pory"
 	.string "You decided to leave it.$"
