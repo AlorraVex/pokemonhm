@@ -34,35 +34,10 @@ script DesertUnderpass_EventScript_Starter{
 
 }
 
-script DesertUnderpass_EventScript_Generator{
-    lockall
-    msgbox(PowerGenerator, MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        msgbox(UseThundershock)
-        EventScript_UseFlash
-        animate flash
-        setflashlevel
-    }
-    releaseall
-    end
-    
-
-}
-
-text PowerGenerator{
-    ("Pichu wants to use Thundershock. \p 
-    Let it?")
-}
-
-script UseThundershock{
-    if(var(VAR_RESULT) == YES)
-    msgbox("Pichu powered up the generator \n
-    with Thundershock.")
-}
 
 text StarterChoice{
-    ("There's a Pokeball in the bag. \p 
-    Take it?")
+    "There's a Pokeball in the bag. \p 
+    Take it?"
 }
 
 script NicknamePartyMon{
