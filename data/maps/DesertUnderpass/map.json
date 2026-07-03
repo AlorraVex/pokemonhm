@@ -39,15 +39,6 @@
     }
   ],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 9,
-      "y": 3,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DesertUnderpass_EventScript_Generator"
-    }
-  ],
+  "bg_events": [],
   "region": "REGION_HOENN"
 }
