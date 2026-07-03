@@ -1,4 +1,4 @@
-mapscripts DesertUnderPass_MapScripts {}
+mapscripts DesertUnderpass_MapScripts {}
 
 script DesertUnderpass_EventScript_Starter{
 
@@ -36,7 +36,7 @@ script DesertUnderpass_EventScript_Starter{
 
 
 text StarterChoice{
-    "There's a Pokeball in the bag. \p 
+    "There's a Pokeball in the bag. 
     Take it?"
 }
 
@@ -44,7 +44,7 @@ script NicknamePartyMon{
     msgbox("Give Pichu a nickname?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
-        call(Common_EventScript_NameRecievedPartyMon)
+        call(Common_EventScript_NameReceivedPartyMon)
     }
 
 }
@@ -53,7 +53,7 @@ script NicknameBoxMon{
 
     msgbox("Give Pichu a nickname?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        call(Common_EventScript_NameRecievedBoxMon)
+        call(Common_EventScript_NameReceivedBoxMon)
     }
     msgbox("Pichu was transferred to the PC.")
 

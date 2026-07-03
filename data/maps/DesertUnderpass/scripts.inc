@@ -1,4 +1,4 @@
-DesertUnderPass_MapScripts::
+DesertUnderpass_MapScripts::
 	.byte 0
 
 
@@ -73,7 +73,7 @@ NicknamePartyMon_1:
 # 46 "data/maps/DesertUnderpass/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
 # 47 "data/maps/DesertUnderpass/scripts.pory"
-	call Common_EventScript_NameRecievedPartyMon
+	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
@@ -90,7 +90,7 @@ NicknameBoxMon_1:
 
 NicknameBoxMon_2:
 # 56 "data/maps/DesertUnderpass/scripts.pory"
-	call Common_EventScript_NameRecievedBoxMon
+	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
 
@@ -116,7 +116,7 @@ NicknameBoxMon_Text_0:
 
 StarterChoice::
 # 38 "data/maps/DesertUnderpass/scripts.pory"
-	.string "There's a Pokeball in the bag. \p \n"
+	.string "There's a Pokeball in the bag. \n"
 	.string "Take it?$"
 
 Starter_NotChosen::
