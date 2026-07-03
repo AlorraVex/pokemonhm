@@ -35,16 +35,35 @@ script DesertUnderpass_EventScript_Starter{
 }
 
 
+script DesertUnderpass_EventScript_Generator{
+    lockall
+    msgbox(PowerGenerator, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        msgbox(UseThundershock)
+        animateflash(0)
+        setflashlevel(0)
+        setmetatile(4, 9, 0x2C3, 1)
+        setmetatile(5, 9, 0x2C4, 0)
+        setmetatile(6, 9, 0x2C5, 1)
+        setmetatile(4, 10, 0x2CB, 1)
+        setmetatile(5, 10, 0x2CC, 1)
+        setmetatile(6, 10, 0x2CD, 1)
+        
+    }
+    releaseall
+    end
+    
+
+}
+
 text PowerGenerator{
-    "Pichu wants to use Thundershock. \p 
+    "Pichu wants to use Thundershock. 
     Let it?"
 }
 
-script UseThundershock{
-    if(var(VAR_RESULT) == YES){
-    msgbox("Pichu powered up the generator \n
-    with Thundershock.")
-    }
+text UseThundershock{
+    "Pichu powered up the generator
+    with Thundershock."
 }
 
 text StarterChoice{
