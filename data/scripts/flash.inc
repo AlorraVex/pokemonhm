@@ -1,5 +1,5 @@
 EventScript_UseFlash::
-	animateflash 0
-	setflashlevel 0
+	animateflash 1
+	setflashlevel 1
 	releaseall
 	end

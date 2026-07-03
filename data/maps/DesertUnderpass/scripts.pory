@@ -35,6 +35,18 @@ script DesertUnderpass_EventScript_Starter{
 }
 
 
+text PowerGenerator{
+    "Pichu wants to use Thundershock. \p 
+    Let it?"
+}
+
+script UseThundershock{
+    if(var(VAR_RESULT) == YES){
+    msgbox("Pichu powered up the generator \n
+    with Thundershock.")
+    }
+}
+
 text StarterChoice{
     "There's a Pokeball in the bag. 
     Take it?"
