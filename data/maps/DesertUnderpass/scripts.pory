@@ -1,42 +1,78 @@
-mapscripts DesertUnderpass_MapScripts {}
+mapscripts DesertUnderpass_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: DesertUnderpass_OnTransition
+    MAP_SCRIPT_ON_RESUME: DesertUnderpass_OnResume
+    }
+
+const FLAG_GENERATOR_ON = 0x22
+const FLAG_HIDE_STARTER_BAG = 0x20
+
+script DesertUnderpass_OnTransition {
+    if (flag(FLAG_GENERATOR_ON)) {
+    setflashlevel(0)
+    setmetatile(4, 9, 0x2E7, 0)
+    setmetatile(5, 9, 0x2E7, 0)
+    setmetatile(6, 9, 0x2E7, 0)
+    setmetatile(4, 10, 0x2E6, 0)
+    setmetatile(5, 10, 0x2E6, 0)
+    setmetatile(6, 10, 0x2E6, 0)
+    }
+    else {
+        setflashlevel(7)
+    }
+
+    if (flag(FLAG_HIDE_STARTER_BAG)) {
+        removeobject(1)
+    }
+
+}
+
+script DesertUnderpass_OnResume {
+    if (flag(FLAG_GENERATOR_ON)) {
+    setmetatile(4, 9, 0x2E7, 0)
+    setmetatile(5, 9, 0x2E7, 0)
+    setmetatile(6, 9, 0x2E7, 0)
+    setmetatile(4, 10, 0x2E6, 0)
+    setmetatile(5, 10, 0x2E6, 0)
+    setmetatile(6, 10, 0x2E6, 0)
+    }
+
+}
 
 script DesertUnderpass_EventScript_Starter{
 
     lockall
     msgbox(StarterChoice, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_PICHU, 5, ITEM_NONE)
+        givemon(SPECIES_PICHU_SPIKY_EARED, 5, ITEM_NONE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You recieved a Pichu and the Bag.")
+            msgbox("You received a Pichu and the Bag.")
             removeobject(1)
             setflag(FLAG_HIDE_STARTER_BAG)
             setflag(FLAG_SYS_BAG_GET)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Pichu was sent to the PC.")
-            removeobject(1)
-            call(NicknameBoxMon)
-        }
-        else{
-            msgbox("You don't have room.")
-        }
-    }
+            }
+        end}
+
     else{
         msgbox(Starter_NotChosen)
-    }
-    waitmessage
-    releaseall
-    end
+        waitmessage
+        releaseall
+        end
+        }
 
 }
 
-
 script DesertUnderpass_EventScript_Generator{
     lockall
+    if(flag(FLAG_HIDE_STARTER_BAG) == FALSE){
+        msgbox("It's a generator.
+        It does not seem to be powered.")
+        releaseall
+        end
+    } elif(flag(FLAG_GENERATOR_ON) == FALSE){
+    
     msgbox(PowerGenerator, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         msgbox(UseThundershock)
@@ -49,22 +85,21 @@ script DesertUnderpass_EventScript_Generator{
         setmetatile(5, 10, 0x2E6, 0)
         setmetatile(6, 10, 0x2E6, 0)
         special(DrawWholeMapView)
-
-    }
+        setflag(FLAG_GENERATOR_ON)
+      }
     releaseall
     end
-    
+    }
 
 }
 
 text PowerGenerator{
-    "Pichu wants to use Thundershock. 
-    Let it?"
+    "It's an unpowered generator.
+    Have Pichu use Thundershock?"
 }
 
 text UseThundershock{
-    "Pichu powered up the generator
-    with Thundershock."
+    "Pichu powered up the generator!"
 }
 
 text StarterChoice{
@@ -77,6 +112,12 @@ script NicknamePartyMon{
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
+    }
+    else{setflag(FLAG_REMOVE_WARP_FADE)
+        warpsilent(MAP_DESERT_UNDERPASS, 1, 7)
+        waitstate
+        releaseall
+        end
     }
 
 }
