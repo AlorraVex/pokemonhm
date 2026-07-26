@@ -234,7 +234,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_114",
-      "name": "ROUTE 114",
+      "name": "Burnt Forest",
       "x": 1,
       "y": 0,
       "width": 2,
@@ -1601,7 +1601,7 @@
     },
     {
       "id": "MAPSEC_DESERT_UNDERPASS",
-      "name": "???",
+      "name": "Secret Village",
       "x": 2,
       "y": 0,
       "width": 1,

@@ -1,0 +1,28 @@
+mapscripts TutorialMap_MapScripts {}
+
+script Wooden_Sign{
+	lockall
+	msgbox("You found the secret village. Congrats!")
+	releaseall
+	end
+}
+
+script Metal_Sign{
+	lockall
+	msgbox("Wow, you found the secret area 
+	of the secret village! Well done!")
+	releaseall
+	end
+}
+
+script Master_Balls{
+	lockall
+	msgbox("Someone left a bunch of Master
+	Balls in this bag. How convenient!")
+	giveitem(ITEM_MASTER_BALL, 10)
+	removeobject(1)
+    setflag(FLAG_HIDE_BALL_BAG)
+    releaseall
+    end
+}
+

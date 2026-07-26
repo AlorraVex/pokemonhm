@@ -55,7 +55,7 @@
 #define FLAG_UNUSED_FLAG      0x21 
 #define FLAG_GENERATOR_ON    0x22 
 #define FLAG_REMOVE_WARP_FADE    0x23
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_HIDE_BALL_BAG    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

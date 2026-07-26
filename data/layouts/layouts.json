@@ -4735,7 +4735,7 @@
       "id": "LAYOUT_METEOR_FALLS_STEVENS_CAVE",
       "name": "MeteorFalls_StevensCave_Layout",
       "width": 30,
-      "height": 32,
+      "height": 33,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_StevensCave/border.bin",
@@ -9323,6 +9323,36 @@
       "border_height": 2,
       "border_width": 2,
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_TUTORIAL_MAP",
+      "name": "TutorialMap_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_PorytilesPrimaryTutorial",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TutorialMap/border.bin",
+      "blockdata_filepath": "data/layouts/TutorialMap/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAPTEST",
+      "name": "maptest_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_GeneralNew",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/maptest/border.bin",
+      "blockdata_filepath": "data/layouts/maptest/map.bin"
+    },
+    {
+      "id": "LAYOUT_BURNT_FOREST",
+      "name": "BurntForest_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BurntForest/border.bin",
+      "blockdata_filepath": "data/layouts/BurntForest/map.bin"
     }
   ]
 }
