@@ -51,7 +51,7 @@ script DesertUnderpass_EventScript_Starter{
             setflag(FLAG_HIDE_STARTER_BAG)
             setflag(FLAG_SYS_BAG_GET)
             setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
+            call(NicknamePichu)
             }
         end}
 
@@ -107,7 +107,7 @@ text StarterChoice{
     Take it?"
 }
 
-script NicknamePartyMon{
+script NicknamePichu{
     msgbox("Give Pichu a nickname?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         call(Common_EventScript_GetGiftMonPartySlot)

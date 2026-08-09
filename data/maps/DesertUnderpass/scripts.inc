@@ -99,7 +99,7 @@ DesertUnderpass_EventScript_Starter_5:
 # 53 "data/maps/DesertUnderpass/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 54 "data/maps/DesertUnderpass/scripts.pory"
-	call NicknamePartyMon
+	call NicknamePichu
 	goto DesertUnderpass_EventScript_Starter_4
 
 
@@ -156,12 +156,12 @@ DesertUnderpass_EventScript_Generator_6:
 	goto DesertUnderpass_EventScript_Generator_5
 
 
-NicknamePartyMon::
+NicknamePichu::
 # 111 "data/maps/DesertUnderpass/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+	msgbox NicknamePichu_Text_0, MSGBOX_YESNO
 # 112 "data/maps/DesertUnderpass/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq NicknamePartyMon_1
+	goto_if_eq NicknamePichu_1
 # 116 "data/maps/DesertUnderpass/scripts.pory"
 	setflag FLAG_REMOVE_WARP_FADE
 # 117 "data/maps/DesertUnderpass/scripts.pory"
@@ -172,7 +172,7 @@ NicknamePartyMon::
 	releaseall
 	end
 
-NicknamePartyMon_1:
+NicknamePichu_1:
 # 113 "data/maps/DesertUnderpass/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
 # 114 "data/maps/DesertUnderpass/scripts.pory"
@@ -182,7 +182,7 @@ NicknamePartyMon_1:
 
 NicknameBoxMon::
 # 127 "data/maps/DesertUnderpass/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+	msgbox NicknamePichu_Text_0, MSGBOX_YESNO
 # 128 "data/maps/DesertUnderpass/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
@@ -206,7 +206,7 @@ DesertUnderpass_EventScript_Generator_Text_0:
 	.string "It's a generator.\n"
 	.string "It does not seem to be powered.$"
 
-NicknamePartyMon_Text_0:
+NicknamePichu_Text_0:
 # 111 "data/maps/DesertUnderpass/scripts.pory"
 	.string "Give Pichu a nickname?$"
 
