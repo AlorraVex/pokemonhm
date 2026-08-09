@@ -37,6 +37,7 @@ script BurntForest_EventScript_Eevee{
             "ears perk up.\p"
             "It begins to follow you.")
             setfollowernpc (2 0x0 BurntForest_EventScript_EeveeFollow)
+            setvar (0x40F7, 1)
             removeobject (0)
             setflag(FLAG_EEVEE_FOLLOWING)
             releaseall
@@ -53,7 +54,42 @@ script BurntForest_EventScript_Eevee{
         }
 
 }
-    
+
+script BurntForest_Trigger_BlockExit{
+    lockall
+    hidefollowernpc
+    msgbox("Eevee doesn't seem ready to leave\n"
+    "the forest.")
+    applymovement(OBJ_EVENT_ID_PLAYER, BlockExit)
+    waitmovement (0)
+    releaseall
+}
+
+script BurntForest_EeeveeTrainerSceneLeft{
+    lockall
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFind)
+    waitmovement (0)
+    msgbox("Eevee whimpers at the sight of\n"
+    "its deceased trainer.\p"
+    )
+}
+
+movement TrainerFind{
+    walk_right
+    walk_up
+    walk_up
+    walk_left
+    face_up
+}
+
+movement EeveeShift{
+    walk_down
+}
+
+movement BlockExit{
+    walk_right
+}
+
 
 text TakeBall{
     "It's an abandoned pokeball.\n"
