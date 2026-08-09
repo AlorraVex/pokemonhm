@@ -98,8 +98,8 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     msgbox("Although you don't hear anything,\n"
-    "Eevee's ears twitch as if it is\l"
-    "listening to something.")
+    "Eevee's ears twitch as if it is listening\l"
+    "to something.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -112,7 +112,7 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     delay(16)
-    msgbox("Eevee looks at the empty pokeball.\n"
+    msgbox("Eevee looks at the empty pokeball\n"
     "in your hand.\p"
     "It seems like it wants to join you.")
     delay(16)
