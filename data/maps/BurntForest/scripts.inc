@@ -86,14 +86,14 @@ BurntForest_EventScript_EeveeFollow::
 	end
 
 
-BurntForest_EventScript_Brendans_Dead::
+BurntForest_EventScript_EeveeTrainer::
 # 85 "data/maps/BurntForest/scripts.pory"
 	lockall
 # 86 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EventScript_Brendans_Dead_Text_0
-# 87 "data/maps/BurntForest/scripts.pory"
+	msgbox BurntForest_EventScript_EeveeTrainer_Text_0
+# 89 "data/maps/BurntForest/scripts.pory"
 	waitmessage
-# 88 "data/maps/BurntForest/scripts.pory"
+# 90 "data/maps/BurntForest/scripts.pory"
 	releaseall
 	end
 
@@ -119,9 +119,11 @@ BurntForest_EventScript_EeveeFollow_Text_0:
 # 77 "data/maps/BurntForest/scripts.pory"
 	.string "Eevee is following you cautiously.$"
 
-BurntForest_EventScript_Brendans_Dead_Text_0:
+BurntForest_EventScript_EeveeTrainer_Text_0:
 # 86 "data/maps/BurntForest/scripts.pory"
-	.string "Oh, no! Brendan's dead.$"
+	.string "A pokemon trainer, succumbed to the\n"
+	.string "oppressive heat of the forest.\p"
+	.string "He is not breathing.$"
 
 TakeBall::
 # 58 "data/maps/BurntForest/scripts.pory"
