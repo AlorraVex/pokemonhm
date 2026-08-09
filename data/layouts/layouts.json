@@ -9347,7 +9347,7 @@
     {
       "id": "LAYOUT_BURNT_FOREST",
       "name": "BurntForest_Layout",
-      "width": 20,
+      "width": 31,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
