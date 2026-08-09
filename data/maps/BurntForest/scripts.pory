@@ -81,9 +81,11 @@ script BurntForest_EventScript_EeveeFollow{
 
 }
 
-script BurntForest_EventScript_Brendans_Dead{
+script BurntForest_EventScript_EeveeTrainer{
     lockall
-    msgbox("Oh, no! Brendan's dead.")
+    msgbox("A pokemon trainer, succumbed to the\n"
+    "oppressive heat of the forest.\p"
+    "He is not breathing.")
     waitmessage
     releaseall
     end
