@@ -92,12 +92,21 @@
     },
     {
       "type": "trigger",
-      "x": 2,
-      "y": 4,
+      "x": 3,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_BURNT_FOREST",
       "var_value": "1",
-      "script": ""
+      "script": "BurntForest_EeeveeTrainerSceneLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_BURNT_FOREST",
+      "var_value": "1",
+      "script": "BurntForest_EeeveeTrainerSceneRight"
     }
   ],
   "bg_events": []
