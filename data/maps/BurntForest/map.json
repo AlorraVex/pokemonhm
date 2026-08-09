@@ -28,6 +28,7 @@
       "flag": "FLAG_EEVEE_BALL_TAKEN"
     },
     {
+      "local_id": "LOCAL_ID_EEVEE",
       "graphics_id": "OBJ_EVENT_GFX_EEVEE_OW",
       "x": 22,
       "y": 4,
@@ -70,6 +71,34 @@
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_BURNT_FOREST",
+      "var_value": "1",
+      "script": "BurntForest_Trigger_BlockExit"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_BURNT_FOREST",
+      "var_value": "1",
+      "script": "BurntForest_Trigger_BlockExit"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_BURNT_FOREST",
+      "var_value": "1",
+      "script": ""
+    }
+  ],
   "bg_events": []
 }
