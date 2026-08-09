@@ -58,14 +58,14 @@
   "warp_events": [
     {
       "x": 0,
-      "y": 8,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_ROUTE114",
       "dest_warp_id": "5"
     },
     {
       "x": 0,
-      "y": 9,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE114",
       "dest_warp_id": "5"
@@ -75,7 +75,7 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 8,
+      "y": 12,
       "elevation": 0,
       "var": "VAR_BURNT_FOREST",
       "var_value": "1",
@@ -84,7 +84,7 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 9,
+      "y": 13,
       "elevation": 0,
       "var": "VAR_BURNT_FOREST",
       "var_value": "1",
