@@ -199,7 +199,7 @@ NicknameBoxMon_2:
 
 DesertUnderpass_EventScript_Starter_Text_0:
 # 49 "data/maps/DesertUnderpass/scripts.pory"
-	.string "You received a Pichu and the Bag.$"
+	.string "You received a pichu and the bag.$"
 
 DesertUnderpass_EventScript_Generator_Text_0:
 # 70 "data/maps/DesertUnderpass/scripts.pory"
@@ -225,7 +225,7 @@ UseThundershock::
 
 StarterChoice::
 # 105 "data/maps/DesertUnderpass/scripts.pory"
-	.string "There's a Pokeball in the bag. \n"
+	.string "There's a pokeball in the bag. \n"
 	.string "Take it?$"
 
 Starter_NotChosen::

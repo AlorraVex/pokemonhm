@@ -1,1 +1,92 @@
 mapscripts BurntForest_MapScripts {}
+
+const FLAG_EEVEE_BALL_TAKEN = 0x21
+const FLAG_EEVEE_FOLLOWING = 0x25
+
+script BurntForest_EventScript_Ball{
+
+    lockall
+    msgbox(TakeBall, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        msgbox("You take the pokeball. 
+        It is cold to the touch.")
+        additem(ITEM_POKE_BALL)
+        setflag(FLAG_EEVEE_BALL_TAKEN)
+        removeobject(1)
+        waitmessage
+        releaseall
+        end}
+
+    else{
+        msgbox(LeftBall)
+        waitmessage
+        releaseall
+        end
+        }
+
+}
+
+script BurntForest_EventScript_Eevee{
+
+    lockall
+    faceplayer
+    if (flag(FLAG_EEVEE_BALL_TAKEN)){
+        msgbox(EeveeBallUse, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            msgbox("At the sight of the ball, Eevee's\n"
+            "ears perk up.\p"
+            "It begins to follow you.")
+            setfollowernpc (2 0x0 BurntForest_EventScript_EeveeFollow)
+            removeobject (0)
+            setflag(FLAG_EEVEE_FOLLOWING)
+            releaseall
+            }
+        end}
+
+    else{
+        msgbox("It's a strange, blue eevee.\p" 
+        "You try to approach, but it shies\n"
+        "away from you.")
+        waitmessage
+        releaseall
+        end
+        }
+
+}
+    
+
+text TakeBall{
+    "It's an abandoned pokeball.\n"
+    "Take it?"
+}
+
+text LeftBall{
+    "You decide to leave it."
+}
+
+text EeveeBallUse{
+    "It's a strange, blue eevee.\p"
+    "Even through the heat of the forest,\n" 
+    "cold air radiates off it.\p"
+    "Show Eevee the pokeball?"
+}
+
+script BurntForest_EventScript_EeveeFollow{
+    lockall
+    faceplayer
+    msgbox("Eevee is following you cautiously.")
+    waitmessage
+    releaseall
+    end
+
+}
+
+script BurntForest_EventScript_Brendans_Dead{
+    lockall
+    msgbox("Oh, no! Brendan's dead.")
+    waitmessage
+    releaseall
+    end
+
+}
+

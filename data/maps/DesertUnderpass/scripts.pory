@@ -46,7 +46,7 @@ script DesertUnderpass_EventScript_Starter{
         givemon(SPECIES_PICHU_SPIKY_EARED, 5, ITEM_NONE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received a Pichu and the Bag.")
+            msgbox("You received a pichu and the bag.")
             removeobject(1)
             setflag(FLAG_HIDE_STARTER_BAG)
             setflag(FLAG_SYS_BAG_GET)
@@ -103,7 +103,7 @@ text UseThundershock{
 }
 
 text StarterChoice{
-    "There's a Pokeball in the bag. 
+    "There's a pokeball in the bag. 
     Take it?"
 }
 
