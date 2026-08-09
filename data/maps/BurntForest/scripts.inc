@@ -206,7 +206,7 @@ BurntForest_EeeveeTrainerSceneRight::
 # 139 "data/maps/BurntForest/scripts.pory"
 	delay 16
 # 140 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EeeveeTrainerSceneRight_Text_0
+	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_0
 # 144 "data/maps/BurntForest/scripts.pory"
 	waitmessage
 # 145 "data/maps/BurntForest/scripts.pory"
@@ -487,33 +487,26 @@ BurntForest_Trigger_BlockExit_Text_0:
 
 BurntForest_EeeveeTrainerSceneLeft_Text_0:
 # 83 "data/maps/BurntForest/scripts.pory"
-	.string "At the sight of the body,\n"
+	.string "Upon seeing its former trainer,\n"
 	.string "Eevee's ears fall low.\p"
-	.string "Eevee gives its trainer and nudge,\n"
-	.string "then settles down beside him.$"
+	.string "Eevee gives its trainer and nudge, then\n"
+	.string "settles down beside him.$"
 
 BurntForest_EeeveeTrainerSceneLeft_Text_1:
 # 100 "data/maps/BurntForest/scripts.pory"
 	.string "Although you don't hear anything,\n"
-	.string "Eevee's ears twitch as if it is\l"
-	.string "listening to something.$"
+	.string "Eevee's ears twitch as if it is listening\l"
+	.string "to something.$"
 
 BurntForest_EeeveeTrainerSceneLeft_Text_2:
 # 115 "data/maps/BurntForest/scripts.pory"
-	.string "Eevee looks at the empty pokeball.\n"
-	.string "in your hand.\p"
+	.string "Eevee looks at the empty pokeball in\n"
+	.string "your hand.\p"
 	.string "It seems like it wants to join you.$"
 
 BurntForest_EeeveeTrainerSceneLeft_Text_3:
 # 126 "data/maps/BurntForest/scripts.pory"
 	.string "Eevee joined the party!$"
-
-BurntForest_EeeveeTrainerSceneRight_Text_0:
-# 140 "data/maps/BurntForest/scripts.pory"
-	.string "At the sight of the body,\n"
-	.string "Eevee's ears fall low.\p"
-	.string "Eevee gives its trainer a nudge,\n"
-	.string "then settles down beside him.$"
 
 BurntForest_EventScript_EeveeFollow_Text_0:
 # 278 "data/maps/BurntForest/scripts.pory"

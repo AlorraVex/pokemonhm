@@ -18034,7 +18034,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Eevee,
         .shinyPalette = gMonShinyPalette_Eevee,
         .iconSprite = gMonIcon_Eevee,
-        .iconPalIndex = 2,
+        .iconPalIndex = 0,
 #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .frontPicFemale = gMonFrontPic_EeveeF,
         .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),

@@ -80,10 +80,10 @@ script BurntForest_EeeveeTrainerSceneLeft{
     playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
     waitmoncry
     delay(16)
-    msgbox("At the sight of the body,\n"
+    msgbox("Upon seeing its former trainer,\n"
     "Eevee's ears fall low.\p"
-    "Eevee gives its trainer and nudge,\n" 
-    "then settles down beside him.")
+    "Eevee gives its trainer and nudge, then\n" 
+    "settles down beside him.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -112,8 +112,8 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     delay(16)
-    msgbox("Eevee looks at the empty pokeball\n"
-    "in your hand.\p"
+    msgbox("Eevee looks at the empty pokeball in\n"
+    "your hand.\p"
     "It seems like it wants to join you.")
     delay(16)
     delay(16)
@@ -137,10 +137,10 @@ script BurntForest_EeeveeTrainerSceneRight{
     playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
     waitmoncry
     delay(16)
-    msgbox("At the sight of the body,\n"
+    msgbox("Upon seeing its former trainer,\n"
     "Eevee's ears fall low.\p"
-    "Eevee gives its trainer a nudge,\n" 
-    "then settles down beside him.")
+    "Eevee gives its trainer and nudge, then\n" 
+    "settles down beside him.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -155,8 +155,8 @@ script BurntForest_EeeveeTrainerSceneRight{
     delay(16)
     delay(16)
     msgbox("Although you don't hear anything,\n"
-    "Eevee's ears twitch as if it is\l"
-    "listening to something.")
+    "Eevee's ears twitch as if it is listening\l"
+    "to something.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -169,8 +169,8 @@ script BurntForest_EeeveeTrainerSceneRight{
     delay(16)
     delay(16)
     delay(16)
-    msgbox("Eevee looks at the empty pokeball.\n"
-    "in your hand.\p"
+    msgbox("Eevee looks at the empty pokeball in\n"
+    "your hand.\p"
     "It seems like it wants to join you.")
     waitmessage
     waitbuttonpress

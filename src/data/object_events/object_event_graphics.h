@@ -395,6 +395,9 @@ const u16 gObjectEventPaletteNeonLight[] = INCGFX_U16("graphics/object_events/pa
 const u32 gObjectEventPic_EeveeOW[] = INCGFX_U32("graphics/object_events/pics/overworld_pokemon/eevee.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u16 gObjectEventPal_EeveeOW[] = INCGFX_U16("graphics/object_events/palettes/eevee.pal", ".gbapal");
 
+const u32 gObjectEventPic_NoibatOW[] = INCGFX_U32("graphics/object_events/pics/overworld_pokemon/noibat.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_NoibatOW[] = INCGFX_U16("graphics/object_events/palettes/noibat.pal", ".gbapal");
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_master.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_UltraBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_ultra.png", ".4bpp", "-mwidth 2 -mheight 4");

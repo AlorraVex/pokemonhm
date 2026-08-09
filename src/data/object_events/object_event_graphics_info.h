@@ -4486,6 +4486,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EeveeOW = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NoibatOW = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_NOIBAT_OW,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_2,
+    .shadowSize = SHADOW_SIZE_NONE,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_NoibatOW,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 #if IS_FRLG
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal = {
