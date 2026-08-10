@@ -1383,6 +1383,18 @@ const struct SpriteFrameImage gObjectEventPicTable_NoibatOW[] = {
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 5), //walking left 2
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_AbsolOW[] = {
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 0), //facing down
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 2), //facing up
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 7), //facing left
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 1
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 2
+    overworld_frame(gObjectEventPic_NoibatOW 4, 4, 3), //walking up 1
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 3), //walking up 2
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 6), //walking left 1
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 6), //walking left 2
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {
