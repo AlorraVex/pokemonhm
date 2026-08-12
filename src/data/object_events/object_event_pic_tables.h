@@ -1377,22 +1377,25 @@ const struct SpriteFrameImage gObjectEventPicTable_NoibatOW[] = {
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 4), //facing left
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 1
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 2
-    overworld_frame(gObjectEventPic_NoibatOW 4, 4, 3), //walking up 1
+    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 3), //walking up 1
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 3), //walking up 2
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 5), //walking left 1
     overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 5), //walking left 2
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_AbsolOW[] = {
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 0), //facing down
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 2), //facing up
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 7), //facing left
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 1
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 1), //walking down 2
-    overworld_frame(gObjectEventPic_NoibatOW 4, 4, 3), //walking up 1
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 3), //walking up 2
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 6), //walking left 1
-    overworld_frame(gObjectEventPic_NoibatOW, 4, 4, 6), //walking left 2
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 0), //face down
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 2), //face up
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 4), //face left
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 1), //go down 1
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 1), //go down 2
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 3), //go up 1
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 3), //go up 2
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 5), //go left 1 
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 5), //go left 2
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 8), //go right 1
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 8), //go right 2 
+    overworld_frame(gObjectEventPic_AbsolOW, 4, 4, 7), //face right
 };
 
 #if IS_FRLG

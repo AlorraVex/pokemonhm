@@ -389,6 +389,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EeveeOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NoibatOW;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AbsolOW;
 // Begin Pokémon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -649,6 +650,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
     [OBJ_EVENT_GFX_EEVEE_OW] =                 &gObjectEventGraphicsInfo_EeveeOW,
     [OBJ_EVENT_GFX_NOIBAT_OW] =                &gObjectEventGraphicsInfo_NoibatOW,
+    [OBJ_EVENT_GFX_ABSOL_OW] =                &gObjectEventGraphicsInfo_AbsolOW,
 #if IS_FRLG
     [OBJ_EVENT_GFX_RED_NORMAL] =               &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE] =                 &gObjectEventGraphicsInfo_RedBike,
