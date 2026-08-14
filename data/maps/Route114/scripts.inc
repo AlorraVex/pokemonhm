@@ -402,14 +402,14 @@ Route114_EventScript_FirstFreezeDry::
 	lock
 # 207 "data/maps/Route114/scripts.pory"
 	goto_if_unset FLAG_FREEZE_DRY_DISCOVERED, Route114_EventScript_FirstFreezeDry_2
-# 255 "data/maps/Route114/scripts.pory"
+# 254 "data/maps/Route114/scripts.pory"
 	goto_if_unset FLAG_TEMP_1, Route114_EventScript_FirstFreezeDry_8
-# 276 "data/maps/Route114/scripts.pory"
+# 275 "data/maps/Route114/scripts.pory"
 	goto_if_unset FLAG_TEMP_1, Route114_EventScript_FirstFreezeDry_22
-# 298 "data/maps/Route114/scripts.pory"
+# 297 "data/maps/Route114/scripts.pory"
 	goto_if_unset FLAG_TEMP_1, Route114_EventScript_FirstFreezeDry_29
 Route114_EventScript_FirstFreezeDry_1:
-# 309 "data/maps/Route114/scripts.pory"
+# 308 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
@@ -421,7 +421,7 @@ Route114_EventScript_FirstFreezeDry_2:
 # 210 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_5
-# 247 "data/maps/Route114/scripts.pory"
+# 246 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FirstFreezeDry_1
 
@@ -436,20 +436,20 @@ Route114_EventScript_FirstFreezeDry_5:
 # 218 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route114_EventScript_FirstFreezeDry_12
-# 223 "data/maps/Route114/scripts.pory"
+# 222 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Route114_EventScript_FirstFreezeDry_13
-# 227 "data/maps/Route114/scripts.pory"
+# 226 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route114_EventScript_FirstFreezeDry_14
-# 243 "data/maps/Route114/scripts.pory"
+# 242 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_9
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_8:
-# 256 "data/maps/Route114/scripts.pory"
+# 255 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_EEVEE
-# 257 "data/maps/Route114/scripts.pory"
+# 256 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_20
 	goto Route114_EventScript_FirstFreezeDry_1
@@ -465,111 +465,111 @@ Route114_EventScript_FirstFreezeDry_12:
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_13:
-# 224 "data/maps/Route114/scripts.pory"
+# 223 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_7
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_14:
+# 227 "data/maps/Route114/scripts.pory"
+	delay 16
 # 228 "data/maps/Route114/scripts.pory"
-	delay 16
-# 229 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+# 229 "data/maps/Route114/scripts.pory"
+	delay 16
 # 230 "data/maps/Route114/scripts.pory"
-	delay 16
-# 231 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 0
-# 232 "data/maps/Route114/scripts.pory"
+# 231 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 0
-# 233 "data/maps/Route114/scripts.pory"
+# 232 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 0
-# 234 "data/maps/Route114/scripts.pory"
+# 233 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 0
-# 235 "data/maps/Route114/scripts.pory"
+# 234 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 236 "data/maps/Route114/scripts.pory"
+# 235 "data/maps/Route114/scripts.pory"
 	delay 16
-# 237 "data/maps/Route114/scripts.pory"
+# 236 "data/maps/Route114/scripts.pory"
 	setflag FLAG_TEMP_1
-# 238 "data/maps/Route114/scripts.pory"
+# 237 "data/maps/Route114/scripts.pory"
 	setflag FLAG_FREEZE_DRY_DISCOVERED
-# 239 "data/maps/Route114/scripts.pory"
+# 238 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_8
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_20:
-# 258 "data/maps/Route114/scripts.pory"
+# 257 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeEevee, MSGBOX_YESNO
-# 259 "data/maps/Route114/scripts.pory"
+# 258 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FirstFreezeDry_25
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_22:
-# 277 "data/maps/Route114/scripts.pory"
+# 276 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_GLACEON
-# 278 "data/maps/Route114/scripts.pory"
+# 277 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_27
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_25:
+# 259 "data/maps/Route114/scripts.pory"
+	delay 16
 # 260 "data/maps/Route114/scripts.pory"
-	delay 16
-# 261 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+# 261 "data/maps/Route114/scripts.pory"
+	delay 16
 # 262 "data/maps/Route114/scripts.pory"
-	delay 16
-# 263 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 0
-# 264 "data/maps/Route114/scripts.pory"
+# 263 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 0
-# 265 "data/maps/Route114/scripts.pory"
+# 264 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 0
-# 266 "data/maps/Route114/scripts.pory"
+# 265 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 0
-# 267 "data/maps/Route114/scripts.pory"
+# 266 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 268 "data/maps/Route114/scripts.pory"
+# 267 "data/maps/Route114/scripts.pory"
 	delay 16
-# 269 "data/maps/Route114/scripts.pory"
+# 268 "data/maps/Route114/scripts.pory"
 	setflag FLAG_TEMP_1
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_27:
-# 279 "data/maps/Route114/scripts.pory"
+# 278 "data/maps/Route114/scripts.pory"
 	bufferleadmonspeciesname 0
-# 280 "data/maps/Route114/scripts.pory"
+# 279 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeGlaceon, MSGBOX_YESNO
-# 281 "data/maps/Route114/scripts.pory"
+# 280 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FirstFreezeDry_31
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_29:
-# 299 "data/maps/Route114/scripts.pory"
+# 298 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_31:
+# 281 "data/maps/Route114/scripts.pory"
+	delay 16
 # 282 "data/maps/Route114/scripts.pory"
-	delay 16
-# 283 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
+# 283 "data/maps/Route114/scripts.pory"
+	delay 16
 # 284 "data/maps/Route114/scripts.pory"
-	delay 16
-# 285 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 0
-# 286 "data/maps/Route114/scripts.pory"
+# 285 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 0
-# 287 "data/maps/Route114/scripts.pory"
+# 286 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 0
-# 288 "data/maps/Route114/scripts.pory"
+# 287 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 0
-# 289 "data/maps/Route114/scripts.pory"
+# 288 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 290 "data/maps/Route114/scripts.pory"
+# 289 "data/maps/Route114/scripts.pory"
 	delay 16
-# 291 "data/maps/Route114/scripts.pory"
+# 290 "data/maps/Route114/scripts.pory"
 	setflag FLAG_TEMP_1
 	goto Route114_EventScript_FirstFreezeDry_1
 
@@ -602,34 +602,33 @@ Route114_EventScript_FirstFreezeDry_Text_5:
 
 Route114_EventScript_FirstFreezeDry_Text_6:
 # 219 "data/maps/Route114/scripts.pory"
-	.string "Eevee used the Help action.\n"
-	.string "You gain advantage on your next\l"
-	.string "d20 test!$"
+	.string "Eevee used the Help action. You\n"
+	.string "gain advantage on your next d20 test!\l$"
 
 Route114_EventScript_FirstFreezeDry_Text_7:
-# 224 "data/maps/Route114/scripts.pory"
+# 223 "data/maps/Route114/scripts.pory"
 	.string "Eevee bites the water.\n"
 	.string "The water does not respond.$"
 
 Route114_EventScript_FirstFreezeDry_Text_8:
-# 239 "data/maps/Route114/scripts.pory"
+# 238 "data/maps/Route114/scripts.pory"
 	.string "Eevee made a bridge with Freeze Dry!$"
 
 Route114_EventScript_FirstFreezeDry_Text_9:
-# 243 "data/maps/Route114/scripts.pory"
+# 242 "data/maps/Route114/scripts.pory"
 	.string "It didn't seem to have any effect.$"
 
 Route114_EventScript_FirstFreezeDry_Text_10:
-# 247 "data/maps/Route114/scripts.pory"
+# 246 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "A pokemon may be able to freeze it.$"
 
 MakeBridgeEevee::
-# 314 "data/maps/Route114/scripts.pory"
+# 313 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "Have Eevee use Freeze Dry?$"
 
 MakeBridgeGlaceon::
-# 319 "data/maps/Route114/scripts.pory"
+# 318 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "Have Glaceon use Glaciate?$"

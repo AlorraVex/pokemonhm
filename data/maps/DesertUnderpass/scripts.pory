@@ -72,21 +72,39 @@ script DesertUnderpass_EventScript_Generator{
         releaseall
         end
     } elif(flag(FLAG_GENERATOR_ON) == FALSE){
-    
-    msgbox(PowerGenerator, MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        msgbox(UseThundershock)
-        animateflash(0)
-        setflashlevel(0)
-        setmetatile(4, 9, 0x2E7, 0)
-        setmetatile(5, 9, 0x2E7, 0)
-        setmetatile(6, 9, 0x2E7, 0)
-        setmetatile(4, 10, 0x2E6, 0)
-        setmetatile(5, 10, 0x2E6, 0)
-        setmetatile(6, 10, 0x2E6, 0)
-        special(DrawWholeMapView)
-        setflag(FLAG_GENERATOR_ON)
-      }
+        msgbox(PowerGenerator, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+		    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Tail Whip", "Thundershock", "Sweet Kiss", "Wish")
+            if (var(VAR_RESULT) == 0){
+				msgbox("Pichu whipped the generator with its\n"
+				"tail.\p"
+                "The generator seems unimpressed.")
+				}
+			elif (var(VAR_RESULT) == 2){
+				msgbox("Pichu gave the generator a little kiss.\p"
+				"Although flattered, the generator\n" 
+				"remains off.")
+				}
+			elif (var(VAR_RESULT) == 3){
+				msgbox("Pichu wished for the generator to turn\n"
+                "on.\p"
+                "Unfortunately, Jirachi did not hear it.")
+				}
+			elif (var(VAR_RESULT) == 1){
+                msgbox(UseThundershock)
+                animateflash(0)
+                setflashlevel(0)
+                setmetatile(4, 9, 0x2E7, 0)
+                setmetatile(5, 9, 0x2E7, 0)
+                setmetatile(6, 9, 0x2E7, 0)
+                setmetatile(4, 10, 0x2E6, 0)
+                setmetatile(5, 10, 0x2E6, 0)
+                setmetatile(6, 10, 0x2E6, 0)
+                special(DrawWholeMapView)
+                setflag(FLAG_GENERATOR_ON)
+            }
+
+        }
     releaseall
     end
     }
@@ -95,7 +113,7 @@ script DesertUnderpass_EventScript_Generator{
 
 text PowerGenerator{
     "It's an unpowered generator.
-    Have Pichu use Thundershock?"
+    Have Pichu use a move?"
 }
 
 text UseThundershock{

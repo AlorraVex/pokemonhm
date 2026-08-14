@@ -216,9 +216,8 @@ script Route114_EventScript_FirstFreezeDry {
 				"its hair.")
 				}
 			elif (var(VAR_RESULT) == 1){
-				msgbox("Eevee used the Help action.\n"
-				"You gain advantage on your next\l" 
-				"d20 test!")
+				msgbox("Eevee used the Help action. You\n"
+				"gain advantage on your next d20 test!\l") 
 				}
 			elif (var(VAR_RESULT) == 2){
 				msgbox("Eevee bites the water.\n"
@@ -308,6 +307,170 @@ script Route114_EventScript_FirstFreezeDry {
 
 	releaseall
 	end
+
+}
+
+script Route114_EventScript_FreezeDry1 {
+	lock
+	if(flag (FLAG_TEMP_1) == FALSE){
+			checkspecies(SPECIES_EEVEE)
+			if(var(VAR_RESULT) == TRUE){
+			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
+				if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(12, 13, 0x135, 0)
+       				setmetatile(11, 13, 0x135, 0)
+        			setmetatile(10, 13, 0x135, 0)
+        			setmetatile(9, 13, 0x135, 0)
+        			special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_1)
+				}
+			}
+
+	}
+
+		else{
+			if(flag (FLAG_TEMP_1) == FALSE){
+				checkspecies(SPECIES_GLACEON)
+				if(var(VAR_RESULT) == TRUE){
+					bufferleadmonspeciesname (0)
+					msgbox(MakeBridgeGlaceon, MSGBOX_YESNO)
+					if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(12, 13, 0x135, 0)
+					setmetatile(11, 13, 0x135, 0)
+					setmetatile(10, 13, 0x135, 0)
+					setmetatile(9, 13, 0x135, 0)
+					special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_1)
+					}
+				}
+
+			}
+
+			else{
+			if(flag (FLAG_TEMP_1) == FALSE){
+				msgbox ("The water here is icy.\n"
+				"A pokemon may be able to freeze it.")
+				}
+			
+			}
+
+		}
+
+}
+
+script Route114_EventScript_FreezeDry2 {
+	lock
+	if(flag (FLAG_TEMP_2) == FALSE){
+			checkspecies(SPECIES_EEVEE)
+			if(var(VAR_RESULT) == TRUE){
+			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
+				if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(3, 16, 0x135, 0)
+       				setmetatile(3, 17, 0x135, 0)
+        			setmetatile(3, 18, 0x135, 0)
+        			special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_2)
+				}
+			}
+
+	}
+
+		else{
+			if(flag (FLAG_TEMP_2) == FALSE){
+				checkspecies(SPECIES_GLACEON)
+				if(var(VAR_RESULT) == TRUE){
+					bufferleadmonspeciesname (0)
+					msgbox(MakeBridgeGlaceon, MSGBOX_YESNO)
+					if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(3, 16, 0x135, 0)
+       				setmetatile(3, 17, 0x135, 0)
+        			setmetatile(3, 18, 0x135, 0)
+					special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_2)
+					}
+				}
+
+			}
+
+			else{
+			if(flag (FLAG_TEMP_2) == FALSE){
+				msgbox ("The water here is icy.\n"
+				"A pokemon may be able to freeze it.")
+				}
+			
+			}
+
+		}
+
+}
+
+script Route114_EventScript_FreezeDry3 {
+	lock
+	if(flag (FLAG_TEMP_3) == FALSE){
+			checkspecies(SPECIES_EEVEE)
+			if(var(VAR_RESULT) == TRUE){
+			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
+				if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(7, 27, 0x135, 0)
+       				setmetatile(8, 27, 0x135, 0)
+        			setmetatile(9, 27, 0x135, 0)
+        			special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_3)
+				}
+			}
+
+	}
+
+		else{
+			if(flag (FLAG_TEMP_3) == FALSE){
+				checkspecies(SPECIES_GLACEON)
+				if(var(VAR_RESULT) == TRUE){
+					bufferleadmonspeciesname (0)
+					msgbox(MakeBridgeGlaceon, MSGBOX_YESNO)
+					if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(7, 27, 0x135, 0)
+       				setmetatile(8, 27, 0x135, 0)
+        			setmetatile(9, 27, 0x135, 0)
+					special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_3)
+					}
+				}
+
+			}
+
+			else{
+			if(flag (FLAG_TEMP_3) == FALSE){
+				msgbox ("The water here is icy.\n"
+				"A pokemon may be able to freeze it.")
+				}
+			
+			}
+
+		}
 
 }
 
