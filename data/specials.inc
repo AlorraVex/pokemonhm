@@ -285,6 +285,7 @@ gSpecials::
 	def_special ScriptMenu_CreatePCMultichoice, waitstate=1
 	def_special AccessHallOfFamePC, waitstate=1
 	def_special Special_ShowDiploma, waitstate=1
+	def_special CheckLeadMonSpecies
 	def_special CheckLeadMonCool
 	def_special CheckLeadMonBeauty
 	def_special CheckLeadMonCute

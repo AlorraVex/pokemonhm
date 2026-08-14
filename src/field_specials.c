@@ -1292,6 +1292,14 @@ void ResetTrickHouseNuggetFlag(void)
     FlagClear(flag);
 }
 
+bool32 CheckLeadMonSpecies(void)
+{
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES) == VarGet(VAR_TEMP_0))
+        return TRUE;
+
+    return FALSE;
+}
+
 bool8 CheckLeadMonCool(void)
 {
     if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_COOL) < 200)

@@ -199,3 +199,125 @@ Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE$"
 
 `
+
+
+
+script Route114_EventScript_FirstFreezeDry {
+	lock
+	if (flag (FLAG_FREEZE_DRY_DISCOVERED) == FALSE){
+		setvar(VAR_TEMP_0, SPECIES_EEVEE)
+		specialvar(VAR_RESULT, CheckLeadMonSpecies)
+		if  (var(VAR_RESULT) == TRUE){
+			msgbox("The water here is icy.\n" 
+			"Have Eevee use a move?")
+			dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Mirror Move", "Helping Hand", "Bite", "Freeze Dry")
+			if (var(VAR_RESULT) == 0){
+				msgbox("Eevee used the water's reflection to do\n"
+				"its hair.")
+				}
+			elif (var(VAR_RESULT) == 1){
+				msgbox("Eevee used the Help action.\n"
+				"You gain advantage on your next\l" 
+				"d20 test!")
+				}
+			elif (var(VAR_RESULT) == 2){
+				msgbox("Eevee bites the water.\n"
+				"The water does not respond.")
+				}
+			elif (var(VAR_RESULT) == 3){
+			delay(16)
+			playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+			delay(16)
+			setmetatile(12, 13, 0x135, 0)
+       		setmetatile(11, 13, 0x135, 0)
+        	setmetatile(10, 13, 0x135, 0)
+        	setmetatile(9, 13, 0x135, 0)
+        	special(DrawWholeMapView)
+			delay(16)
+			setflag (FLAG_TEMP_1)
+			setflag (FLAG_FREEZE_DRY_DISCOVERED)
+			msgbox("Eevee made a bridge with Freeze Dry!")
+			}
+
+			else{ 
+			msgbox ("It didn't seem to have any effect.")
+			}
+		}
+	
+		else {msgbox ("The water here is icy.\n"
+		"A pokemon may be able to freeze it.")
+
+		}
+
+	} 
+
+	else{
+		if(flag (FLAG_TEMP_1) == FALSE){
+			checkspecies(SPECIES_EEVEE)
+			if(var(VAR_RESULT) == TRUE){
+			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
+				if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(12, 13, 0x135, 0)
+       				setmetatile(11, 13, 0x135, 0)
+        			setmetatile(10, 13, 0x135, 0)
+        			setmetatile(9, 13, 0x135, 0)
+        			special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_1)
+				}
+			}
+
+		}
+
+		else{
+			if(flag (FLAG_TEMP_1) == FALSE){
+				checkspecies(SPECIES_GLACEON)
+				if(var(VAR_RESULT) == TRUE){
+					bufferleadmonspeciesname (0)
+					msgbox(MakeBridgeGlaceon, MSGBOX_YESNO)
+					if(var(VAR_RESULT) == YES){
+					delay(16)
+					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					delay(16)
+					setmetatile(12, 13, 0x135, 0)
+					setmetatile(11, 13, 0x135, 0)
+					setmetatile(10, 13, 0x135, 0)
+					setmetatile(9, 13, 0x135, 0)
+					special(DrawWholeMapView)
+					delay(16)
+					setflag (FLAG_TEMP_1)
+					}
+				}
+
+			}
+
+			else{
+			if(flag (FLAG_TEMP_1) == FALSE){
+				msgbox ("The water here is icy.\n"
+				"A pokemon may be able to freeze it.")
+				}
+			
+			}
+
+		}
+
+	}
+
+	releaseall
+	end
+
+}
+
+text MakeBridgeEevee{
+	"The water here is icy.\n"
+	"Have Eevee use Freeze Dry?"
+}
+
+text MakeBridgeGlaceon{
+	"The water here is icy.\n"
+	"Have Glaceon use Glaciate?"
+}
+
