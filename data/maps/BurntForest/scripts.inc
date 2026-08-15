@@ -176,166 +176,168 @@ BurntForest_EeeveeTrainerSceneLeft::
 # 122 "data/maps/BurntForest/scripts.pory"
 	removeitem ITEM_POKE_BALL
 # 123 "data/maps/BurntForest/scripts.pory"
-	setflag FLAG_EEVEE_OBTAINED
+	setflag FLAG_RECEIVED_HM_SURF
 # 124 "data/maps/BurntForest/scripts.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE
+	setflag FLAG_BADGE05_GET
 # 125 "data/maps/BurntForest/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setflag FLAG_EEVEE_OBTAINED
 # 126 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_3
+	setflag FLAG_DEFEATED_PETALBURG_GYM
 # 127 "data/maps/BurntForest/scripts.pory"
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, move1 = MOVE_MIRROR_MOVE, move2 = MOVE_HELPING_HAND, move3 = MOVE_SURF, move4 = MOVE_FREEZE_DRY
+# 128 "data/maps/BurntForest/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 129 "data/maps/BurntForest/scripts.pory"
+	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_3
+# 130 "data/maps/BurntForest/scripts.pory"
 	call NicknameEevee
 	end
 
 
 BurntForest_EeeveeTrainerSceneRight::
-# 132 "data/maps/BurntForest/scripts.pory"
-	lockall
-# 133 "data/maps/BurntForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight
-# 134 "data/maps/BurntForest/scripts.pory"
-	waitmovement 0
 # 135 "data/maps/BurntForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerShiftRight
+	lockall
 # 136 "data/maps/BurntForest/scripts.pory"
-	waitmovement
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight
 # 137 "data/maps/BurntForest/scripts.pory"
-	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+	waitmovement 0
 # 138 "data/maps/BurntForest/scripts.pory"
-	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerShiftRight
 # 139 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitmovement
 # 140 "data/maps/BurntForest/scripts.pory"
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+# 141 "data/maps/BurntForest/scripts.pory"
+	waitmoncry
+# 142 "data/maps/BurntForest/scripts.pory"
+	delay 16
+# 143 "data/maps/BurntForest/scripts.pory"
 	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_0
-# 144 "data/maps/BurntForest/scripts.pory"
-	waitmessage
-# 145 "data/maps/BurntForest/scripts.pory"
-	waitbuttonpress
-# 146 "data/maps/BurntForest/scripts.pory"
-	closemessage
 # 147 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitmessage
 # 148 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitbuttonpress
 # 149 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	closemessage
 # 150 "data/maps/BurntForest/scripts.pory"
 	delay 16
 # 151 "data/maps/BurntForest/scripts.pory"
-	playse SE_PIN
+	delay 16
 # 152 "data/maps/BurntForest/scripts.pory"
-	delay 8
+	delay 16
 # 153 "data/maps/BurntForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Ghost
+	delay 16
 # 154 "data/maps/BurntForest/scripts.pory"
-	waitmovement 0
+	playse SE_PIN
 # 155 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	delay 8
 # 156 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Ghost
 # 157 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_1
+	waitmovement 0
+# 158 "data/maps/BurntForest/scripts.pory"
+	delay 16
+# 159 "data/maps/BurntForest/scripts.pory"
+	delay 16
 # 160 "data/maps/BurntForest/scripts.pory"
-	waitmessage
-# 161 "data/maps/BurntForest/scripts.pory"
-	waitbuttonpress
-# 162 "data/maps/BurntForest/scripts.pory"
-	closemessage
+	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_1
 # 163 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitmessage
 # 164 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitbuttonpress
 # 165 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	closemessage
 # 166 "data/maps/BurntForest/scripts.pory"
 	delay 16
 # 167 "data/maps/BurntForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, EeveeJoin
+	delay 16
 # 168 "data/maps/BurntForest/scripts.pory"
-	waitmovement 0
+	delay 16
 # 169 "data/maps/BurntForest/scripts.pory"
 	delay 16
 # 170 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, EeveeJoin
 # 171 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitmovement 0
 # 172 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_2
+	delay 16
+# 173 "data/maps/BurntForest/scripts.pory"
+	delay 16
+# 174 "data/maps/BurntForest/scripts.pory"
+	delay 16
 # 175 "data/maps/BurntForest/scripts.pory"
-	waitmessage
-# 176 "data/maps/BurntForest/scripts.pory"
-	waitbuttonpress
-# 177 "data/maps/BurntForest/scripts.pory"
-	closemessage
+	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_2
 # 178 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitmessage
 # 179 "data/maps/BurntForest/scripts.pory"
-	delay 16
+	waitbuttonpress
 # 180 "data/maps/BurntForest/scripts.pory"
-	destroyfollowernpc
+	closemessage
 # 181 "data/maps/BurntForest/scripts.pory"
-	setvar 0x40F7, 0
+	delay 16
 # 182 "data/maps/BurntForest/scripts.pory"
-	removeitem ITEM_POKE_BALL
+	delay 16
 # 183 "data/maps/BurntForest/scripts.pory"
-	setflag FLAG_EEVEE_OBTAINED
+	destroyfollowernpc
 # 184 "data/maps/BurntForest/scripts.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE
+	setvar 0x40F7, 0
 # 185 "data/maps/BurntForest/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	removeitem ITEM_POKE_BALL
 # 186 "data/maps/BurntForest/scripts.pory"
-	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_3
+	setflag FLAG_RECEIVED_HM_SURF
 # 187 "data/maps/BurntForest/scripts.pory"
+	setflag FLAG_BADGE05_GET
+# 188 "data/maps/BurntForest/scripts.pory"
+	setflag FLAG_EEVEE_OBTAINED
+# 189 "data/maps/BurntForest/scripts.pory"
+	setflag FLAG_DEFEATED_PETALBURG_GYM
+# 190 "data/maps/BurntForest/scripts.pory"
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, move1 = MOVE_MIRROR_MOVE, move2 = MOVE_HELPING_HAND, move3 = MOVE_SURF, move4 = MOVE_FREEZE_DRY
+# 191 "data/maps/BurntForest/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 192 "data/maps/BurntForest/scripts.pory"
+	msgbox BurntForest_EeeveeTrainerSceneLeft_Text_3
+# 193 "data/maps/BurntForest/scripts.pory"
 	call NicknameEevee
 	end
 
 
-# 191 "data/maps/BurntForest/scripts.pory"
-TrainerFindLeft:
-# 192 "data/maps/BurntForest/scripts.pory"
-	walk_right
-# 193 "data/maps/BurntForest/scripts.pory"
-	walk_up
-# 194 "data/maps/BurntForest/scripts.pory"
-	walk_up
-# 195 "data/maps/BurntForest/scripts.pory"
-	walk_up
-# 196 "data/maps/BurntForest/scripts.pory"
-	face_left
 # 197 "data/maps/BurntForest/scripts.pory"
-	delay_16
-	step_end
-
-# 200 "data/maps/BurntForest/scripts.pory"
-TrainerFindRight:
-# 201 "data/maps/BurntForest/scripts.pory"
-	walk_left
-# 202 "data/maps/BurntForest/scripts.pory"
-	walk_up
-# 203 "data/maps/BurntForest/scripts.pory"
-	walk_up
-# 204 "data/maps/BurntForest/scripts.pory"
+TrainerFindLeft:
+# 198 "data/maps/BurntForest/scripts.pory"
 	walk_right
-# 205 "data/maps/BurntForest/scripts.pory"
+# 199 "data/maps/BurntForest/scripts.pory"
 	walk_up
-# 206 "data/maps/BurntForest/scripts.pory"
+# 200 "data/maps/BurntForest/scripts.pory"
+	walk_up
+# 201 "data/maps/BurntForest/scripts.pory"
+	walk_up
+# 202 "data/maps/BurntForest/scripts.pory"
 	face_left
-# 207 "data/maps/BurntForest/scripts.pory"
+# 203 "data/maps/BurntForest/scripts.pory"
 	delay_16
 	step_end
 
+# 206 "data/maps/BurntForest/scripts.pory"
+TrainerFindRight:
+# 207 "data/maps/BurntForest/scripts.pory"
+	walk_left
+# 208 "data/maps/BurntForest/scripts.pory"
+	walk_up
+# 209 "data/maps/BurntForest/scripts.pory"
+	walk_up
 # 210 "data/maps/BurntForest/scripts.pory"
-PlayerShiftLeft:
+	walk_right
 # 211 "data/maps/BurntForest/scripts.pory"
 	walk_up
 # 212 "data/maps/BurntForest/scripts.pory"
+	face_left
+# 213 "data/maps/BurntForest/scripts.pory"
 	delay_16
 	step_end
 
-# 215 "data/maps/BurntForest/scripts.pory"
-PlayerShiftRight:
 # 216 "data/maps/BurntForest/scripts.pory"
-	walk_left
+PlayerShiftLeft:
 # 217 "data/maps/BurntForest/scripts.pory"
 	walk_up
 # 218 "data/maps/BurntForest/scripts.pory"
@@ -343,122 +345,132 @@ PlayerShiftRight:
 	step_end
 
 # 221 "data/maps/BurntForest/scripts.pory"
-Ghost:
+PlayerShiftRight:
 # 222 "data/maps/BurntForest/scripts.pory"
-	emote_exclamation_mark
+	walk_left
 # 223 "data/maps/BurntForest/scripts.pory"
-	delay_16
+	walk_up
 # 224 "data/maps/BurntForest/scripts.pory"
 	delay_16
-# 225 "data/maps/BurntForest/scripts.pory"
-	delay_16
-# 226 "data/maps/BurntForest/scripts.pory"
-	delay_16
+	step_end
+
 # 227 "data/maps/BurntForest/scripts.pory"
-	face_right
+Ghost:
 # 228 "data/maps/BurntForest/scripts.pory"
-	delay_16
+	emote_exclamation_mark
 # 229 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 230 "data/maps/BurntForest/scripts.pory"
-	face_left
+	delay_16
 # 231 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 232 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 233 "data/maps/BurntForest/scripts.pory"
-	face_up
+	face_right
 # 234 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 235 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 236 "data/maps/BurntForest/scripts.pory"
-	jump_in_place_up
+	face_left
 # 237 "data/maps/BurntForest/scripts.pory"
-	delay_8
+	delay_16
 # 238 "data/maps/BurntForest/scripts.pory"
-	jump_in_place_up
+	delay_16
 # 239 "data/maps/BurntForest/scripts.pory"
-	delay_8
+	face_up
 # 240 "data/maps/BurntForest/scripts.pory"
-	jump_in_place_up
+	delay_16
 # 241 "data/maps/BurntForest/scripts.pory"
 	delay_16
 # 242 "data/maps/BurntForest/scripts.pory"
+	jump_in_place_up
+# 243 "data/maps/BurntForest/scripts.pory"
+	delay_8
+# 244 "data/maps/BurntForest/scripts.pory"
+	jump_in_place_up
+# 245 "data/maps/BurntForest/scripts.pory"
+	delay_8
+# 246 "data/maps/BurntForest/scripts.pory"
+	jump_in_place_up
+# 247 "data/maps/BurntForest/scripts.pory"
+	delay_16
+# 248 "data/maps/BurntForest/scripts.pory"
 	delay_16
 	step_end
 
-# 245 "data/maps/BurntForest/scripts.pory"
+# 251 "data/maps/BurntForest/scripts.pory"
 EeveeJoin:
-# 246 "data/maps/BurntForest/scripts.pory"
+# 252 "data/maps/BurntForest/scripts.pory"
 	walk_down
-# 247 "data/maps/BurntForest/scripts.pory"
+# 253 "data/maps/BurntForest/scripts.pory"
 	face_left
 	step_end
 
-# 250 "data/maps/BurntForest/scripts.pory"
+# 256 "data/maps/BurntForest/scripts.pory"
 EeveeShift:
-# 251 "data/maps/BurntForest/scripts.pory"
+# 257 "data/maps/BurntForest/scripts.pory"
 	walk_down
 	step_end
 
-# 254 "data/maps/BurntForest/scripts.pory"
+# 260 "data/maps/BurntForest/scripts.pory"
 BlockExit:
-# 255 "data/maps/BurntForest/scripts.pory"
+# 261 "data/maps/BurntForest/scripts.pory"
 	walk_right
 	step_end
 
 BurntForest_EventScript_EeveeFollow::
-# 276 "data/maps/BurntForest/scripts.pory"
+# 282 "data/maps/BurntForest/scripts.pory"
 	lockall
-# 277 "data/maps/BurntForest/scripts.pory"
+# 283 "data/maps/BurntForest/scripts.pory"
 	faceplayer
-# 278 "data/maps/BurntForest/scripts.pory"
+# 284 "data/maps/BurntForest/scripts.pory"
 	msgbox BurntForest_EventScript_EeveeFollow_Text_0
-# 279 "data/maps/BurntForest/scripts.pory"
+# 285 "data/maps/BurntForest/scripts.pory"
 	waitmessage
-# 280 "data/maps/BurntForest/scripts.pory"
+# 286 "data/maps/BurntForest/scripts.pory"
 	releaseall
 	end
 
 
 BurntForest_EventScript_EeveeTrainer::
-# 286 "data/maps/BurntForest/scripts.pory"
+# 292 "data/maps/BurntForest/scripts.pory"
 	lockall
-# 287 "data/maps/BurntForest/scripts.pory"
+# 293 "data/maps/BurntForest/scripts.pory"
 	goto_if_set FLAG_EEVEE_OBTAINED, BurntForest_EventScript_EeveeTrainer_1
-# 294 "data/maps/BurntForest/scripts.pory"
+# 300 "data/maps/BurntForest/scripts.pory"
 	msgbox BurntForest_EventScript_EeveeTrainer_Text_1
-# 297 "data/maps/BurntForest/scripts.pory"
+# 303 "data/maps/BurntForest/scripts.pory"
 	waitmessage
-# 298 "data/maps/BurntForest/scripts.pory"
+# 304 "data/maps/BurntForest/scripts.pory"
 	releaseall
 	end
 
 BurntForest_EventScript_EeveeTrainer_1:
-# 288 "data/maps/BurntForest/scripts.pory"
+# 294 "data/maps/BurntForest/scripts.pory"
 	msgbox BurntForest_EventScript_EeveeTrainer_Text_0
-# 289 "data/maps/BurntForest/scripts.pory"
+# 295 "data/maps/BurntForest/scripts.pory"
 	waitmessage
-# 290 "data/maps/BurntForest/scripts.pory"
+# 296 "data/maps/BurntForest/scripts.pory"
 	releaseall
 	end
 
 
 NicknameEevee::
-# 304 "data/maps/BurntForest/scripts.pory"
+# 310 "data/maps/BurntForest/scripts.pory"
 	msgbox NicknameEevee_Text_0, MSGBOX_YESNO
-# 305 "data/maps/BurntForest/scripts.pory"
+# 311 "data/maps/BurntForest/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameEevee_1
-# 310 "data/maps/BurntForest/scripts.pory"
+# 316 "data/maps/BurntForest/scripts.pory"
 	releaseall
 	end
 
 NicknameEevee_1:
-# 306 "data/maps/BurntForest/scripts.pory"
+# 312 "data/maps/BurntForest/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 307 "data/maps/BurntForest/scripts.pory"
+# 313 "data/maps/BurntForest/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
@@ -505,38 +517,38 @@ BurntForest_EeeveeTrainerSceneLeft_Text_2:
 	.string "It seems like it wants to join you.$"
 
 BurntForest_EeeveeTrainerSceneLeft_Text_3:
-# 126 "data/maps/BurntForest/scripts.pory"
+# 129 "data/maps/BurntForest/scripts.pory"
 	.string "Eevee joined the party!$"
 
 BurntForest_EventScript_EeveeFollow_Text_0:
-# 278 "data/maps/BurntForest/scripts.pory"
+# 284 "data/maps/BurntForest/scripts.pory"
 	.string "Eevee is following you cautiously.$"
 
 BurntForest_EventScript_EeveeTrainer_Text_0:
-# 288 "data/maps/BurntForest/scripts.pory"
+# 294 "data/maps/BurntForest/scripts.pory"
 	.string "It's Eevee's original trainer.$"
 
 BurntForest_EventScript_EeveeTrainer_Text_1:
-# 294 "data/maps/BurntForest/scripts.pory"
+# 300 "data/maps/BurntForest/scripts.pory"
 	.string "A pokemon trainer, succumbed to the\n"
 	.string "oppressive heat of the forest.\p"
 	.string "He is not breathing.$"
 
 NicknameEevee_Text_0:
-# 304 "data/maps/BurntForest/scripts.pory"
+# 310 "data/maps/BurntForest/scripts.pory"
 	.string "Give Eevee a nickname?$"
 
 TakeBall::
-# 259 "data/maps/BurntForest/scripts.pory"
+# 265 "data/maps/BurntForest/scripts.pory"
 	.string "It's an abandoned pokeball.\n"
 	.string "Take it?$"
 
 LeftBall::
-# 264 "data/maps/BurntForest/scripts.pory"
+# 270 "data/maps/BurntForest/scripts.pory"
 	.string "You decide to leave it.$"
 
 EeveeBallUse::
-# 268 "data/maps/BurntForest/scripts.pory"
+# 274 "data/maps/BurntForest/scripts.pory"
 	.string "It's a strange, blue eevee.\p"
 	.string "Even through the heat of the forest,\n"
 	.string "cold air radiates off it.\p"

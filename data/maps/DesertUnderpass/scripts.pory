@@ -43,7 +43,7 @@ script DesertUnderpass_EventScript_Starter{
     lockall
     msgbox(StarterChoice, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_PICHU_SPIKY_EARED, 5, ITEM_NONE)
+        givemon(SPECIES_PICHU_SPIKY_EARED, 5, ITEM_NONE, move1=MOVE_TAIL_WHIP, move2=MOVE_THUNDERSHOCK, move3=MOVE_SWEET_KISS, move4=MOVE_WISH)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received a pichu and the bag.")
@@ -51,6 +51,7 @@ script DesertUnderpass_EventScript_Starter{
             setflag(FLAG_HIDE_STARTER_BAG)
             setflag(FLAG_SYS_BAG_GET)
             setflag(FLAG_SYS_POKEMON_GET)
+            setflag(FLAG_SYS_B_DASH)
             call(NicknamePichu)
             }
         end}

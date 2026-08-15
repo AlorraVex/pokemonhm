@@ -121,11 +121,11 @@ script BurntForest_EeeveeTrainerSceneLeft{
     setvar (0x40F7, 0)
     removeitem(ITEM_POKE_BALL)
     setflag (FLAG_EEVEE_OBTAINED)
-    givemon(SPECIES_EEVEE, 5, ITEM_NONE)
-        playfanfare(MUS_OBTAIN_ITEM)
-        msgbox("Eevee joined the party!")
-        call(NicknameEevee)
-        end
+    givemon(SPECIES_EEVEE, 5, ITEM_NONE, move1=MOVE_MIRROR_MOVE, move2=MOVE_HELPING_HAND, move3=MOVE_BITE, move4=MOVE_FREEZE_DRY)
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox("Eevee joined the party!")
+    call(NicknameEevee)
+    end
 }
 
 script BurntForest_EeeveeTrainerSceneRight{
@@ -181,7 +181,7 @@ script BurntForest_EeeveeTrainerSceneRight{
     setvar (0x40F7, 0)
     removeitem(ITEM_POKE_BALL)
     setflag (FLAG_EEVEE_OBTAINED)
-    givemon(SPECIES_EEVEE, 5, ITEM_NONE)
+    givemon(SPECIES_EEVEE, 5, ITEM_NONE, move1=MOVE_MIRROR_MOVE, move2=MOVE_HELPING_HAND, move3=MOVE_BITE, move4=MOVE_FREEZE_DRY)
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox("Eevee joined the party!")
         call(NicknameEevee)

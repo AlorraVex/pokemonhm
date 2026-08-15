@@ -233,7 +233,7 @@ script Route114_EventScript_FirstFreezeDry {
         	setmetatile(9, 13, 0x135, 0)
         	special(DrawWholeMapView)
 			delay(16)
-			setflag (FLAG_TEMP_1)
+			setvar (VAR_TEMP_1, 1)
 			setflag (FLAG_FREEZE_DRY_DISCOVERED)
 			msgbox("Eevee made a bridge with Freeze Dry!")
 			}
@@ -251,7 +251,7 @@ script Route114_EventScript_FirstFreezeDry {
 	} 
 
 	else{
-		if(flag (FLAG_TEMP_1) == FALSE){
+		if(var (VAR_TEMP_1) == 0){
 			checkspecies(SPECIES_EEVEE)
 			if(var(VAR_RESULT) == TRUE){
 			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
@@ -265,14 +265,14 @@ script Route114_EventScript_FirstFreezeDry {
         			setmetatile(9, 13, 0x135, 0)
         			special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_1)
+					setvar (VAR_TEMP_1, 1)
 				}
 			}
 
 		}
 
 		else{
-			if(flag (FLAG_TEMP_1) == FALSE){
+			if(var (VAR_TEMP_1) == 0){
 				checkspecies(SPECIES_GLACEON)
 				if(var(VAR_RESULT) == TRUE){
 					bufferleadmonspeciesname (0)
@@ -287,14 +287,14 @@ script Route114_EventScript_FirstFreezeDry {
 					setmetatile(9, 13, 0x135, 0)
 					special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_1)
+					setvar (VAR_TEMP_1, 1)
 					}
 				}
 
 			}
 
 			else{
-			if(flag (FLAG_TEMP_1) == FALSE){
+			if(var (VAR_TEMP_1) == 0){
 				msgbox ("The water here is icy.\n"
 				"A pokemon may be able to freeze it.")
 				}
@@ -312,7 +312,7 @@ script Route114_EventScript_FirstFreezeDry {
 
 script Route114_EventScript_FreezeDry1 {
 	lock
-	if(flag (FLAG_TEMP_1) == FALSE){
+	if(var (VAR_TEMP_1) == 0){
 			checkspecies(SPECIES_EEVEE)
 			if(var(VAR_RESULT) == TRUE){
 			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
@@ -326,14 +326,14 @@ script Route114_EventScript_FreezeDry1 {
         			setmetatile(9, 13, 0x135, 0)
         			special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_1)
+					setvar (VAR_TEMP_1, 1)
 				}
 			}
 
 	}
 
 		else{
-			if(flag (FLAG_TEMP_1) == FALSE){
+			if(var (VAR_TEMP_1) == 0){
 				checkspecies(SPECIES_GLACEON)
 				if(var(VAR_RESULT) == TRUE){
 					bufferleadmonspeciesname (0)
@@ -348,14 +348,14 @@ script Route114_EventScript_FreezeDry1 {
 					setmetatile(9, 13, 0x135, 0)
 					special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_1)
+					setvar (VAR_TEMP_1, 1)
 					}
 				}
 
 			}
 
 			else{
-			if(flag (FLAG_TEMP_1) == FALSE){
+			if(var (VAR_TEMP_1) == 0){
 				msgbox ("The water here is icy.\n"
 				"A pokemon may be able to freeze it.")
 				}
@@ -363,12 +363,15 @@ script Route114_EventScript_FreezeDry1 {
 			}
 
 		}
+
+	releaseall
+	end
 
 }
 
 script Route114_EventScript_FreezeDry2 {
 	lock
-	if(flag (FLAG_TEMP_2) == FALSE){
+	if(var (VAR_TEMP_2) == 0){
 			checkspecies(SPECIES_EEVEE)
 			if(var(VAR_RESULT) == TRUE){
 			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
@@ -381,14 +384,14 @@ script Route114_EventScript_FreezeDry2 {
         			setmetatile(3, 18, 0x135, 0)
         			special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_2)
+					setvar (VAR_TEMP_2, 1)
 				}
 			}
 
 	}
 
 		else{
-			if(flag (FLAG_TEMP_2) == FALSE){
+			if(var (VAR_TEMP_2) == 0){
 				checkspecies(SPECIES_GLACEON)
 				if(var(VAR_RESULT) == TRUE){
 					bufferleadmonspeciesname (0)
@@ -402,14 +405,14 @@ script Route114_EventScript_FreezeDry2 {
         			setmetatile(3, 18, 0x135, 0)
 					special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_2)
+					setvar (VAR_TEMP_2, 1)
 					}
 				}
 
 			}
 
 			else{
-			if(flag (FLAG_TEMP_2) == FALSE){
+			if(var (VAR_TEMP_2) == 0){
 				msgbox ("The water here is icy.\n"
 				"A pokemon may be able to freeze it.")
 				}
@@ -417,12 +420,15 @@ script Route114_EventScript_FreezeDry2 {
 			}
 
 		}
+
+	releaseall
+	end
 
 }
 
 script Route114_EventScript_FreezeDry3 {
 	lock
-	if(flag (FLAG_TEMP_3) == FALSE){
+	if(var (VAR_TEMP_3) == 0){
 			checkspecies(SPECIES_EEVEE)
 			if(var(VAR_RESULT) == TRUE){
 			msgbox(MakeBridgeEevee, MSGBOX_YESNO)
@@ -430,19 +436,18 @@ script Route114_EventScript_FreezeDry3 {
 					delay(16)
 					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
 					delay(16)
-					setmetatile(7, 27, 0x135, 0)
        				setmetatile(8, 27, 0x135, 0)
         			setmetatile(9, 27, 0x135, 0)
         			special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_3)
+					setvar (VAR_TEMP_3, 1)
 				}
 			}
 
 	}
 
 		else{
-			if(flag (FLAG_TEMP_3) == FALSE){
+			if(var (VAR_TEMP_3) == 0){
 				checkspecies(SPECIES_GLACEON)
 				if(var(VAR_RESULT) == TRUE){
 					bufferleadmonspeciesname (0)
@@ -451,19 +456,18 @@ script Route114_EventScript_FreezeDry3 {
 					delay(16)
 					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
 					delay(16)
-					setmetatile(7, 27, 0x135, 0)
        				setmetatile(8, 27, 0x135, 0)
         			setmetatile(9, 27, 0x135, 0)
 					special(DrawWholeMapView)
 					delay(16)
-					setflag (FLAG_TEMP_3)
+					setvar (VAR_TEMP_3, 1)
 					}
 				}
 
 			}
 
 			else{
-			if(flag (FLAG_TEMP_3) == FALSE){
+			if(var (VAR_TEMP_3) == 0){
 				msgbox ("The water here is icy.\n"
 				"A pokemon may be able to freeze it.")
 				}
@@ -471,6 +475,159 @@ script Route114_EventScript_FreezeDry3 {
 			}
 
 		}
+
+	releaseall
+	end
+
+}
+
+//bridge 1
+
+script Route114_Trigger_Bridge1CollisionOnSurf {
+
+	lockall
+	setmetatile(12, 13, 0x135, 1)
+    setmetatile(11, 13, 0x135, 1)
+    setmetatile(10, 13, 0x135, 1)
+    setmetatile(9, 13, 0x135, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge1CollisionOffSurf {
+
+	lockall
+	setmetatile(12, 13, 0x192, 0)
+    setmetatile(11, 13, 0x170, 0)
+    setmetatile(10, 13, 0x170, 0)
+    setmetatile(9, 13, 0x190, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge1CollisionOffLand {
+
+	lockall
+	setmetatile(12, 13, 0x135, 0)
+    setmetatile(11, 13, 0x135, 0)
+    setmetatile(10, 13, 0x135, 0)
+    setmetatile(9, 13, 0x135, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge1CollisionOnLand {
+
+	lockall
+	setmetatile(12, 13, 0x192, 1)
+    setmetatile(11, 13, 0x170, 1)
+    setmetatile(10, 13, 0x170, 1)
+    setmetatile(9, 13, 0x190, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+//bridge 2
+
+script Route114_Trigger_Bridge2CollisionOnSurf {
+
+	lockall
+	setmetatile(3, 16, 0x135, 1)
+    setmetatile(3, 17, 0x135, 1)
+    setmetatile(3, 18, 0x135, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge2CollisionOffSurf {
+
+	lockall
+	setmetatile(3, 16, 0x189, 0)
+    setmetatile(3, 17, 0x170, 0)
+    setmetatile(3, 18, 0x170, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge2CollisionOffLand {
+
+	lockall
+	setmetatile(3, 16, 0x135, 0)
+    setmetatile(3, 17, 0x135, 0)
+    setmetatile(3, 18, 0x135, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge2CollisionOnLand {
+
+	lockall
+	setmetatile(3, 16, 0x189, 1)
+    setmetatile(3, 17, 0x170, 1)
+    setmetatile(3, 18, 0x170, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+//bridge 3
+
+script Route114_Trigger_Bridge3CollisionOnSurf {
+
+	lockall
+	setmetatile(8, 27, 0x135, 1)
+    setmetatile(9, 27, 0x135, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge3CollisionOffSurf {
+
+	lockall
+	setmetatile(8, 27, 0x190, 0)
+    setmetatile(9, 27, 0x192, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge3CollisionOffLand {
+
+	lockall
+	setmetatile(8, 27, 0x135, 0)
+    setmetatile(9, 27, 0x135, 0)
+	special(DrawWholeMapView)
+	releaseall
+	end
+
+}
+
+script Route114_Trigger_Bridge3CollisionOnLand {
+
+	lockall
+	setmetatile(8, 27, 0x190, 1)
+    setmetatile(9, 27, 0x192, 1)
+	special(DrawWholeMapView)
+	releaseall
+	end
 
 }
 
