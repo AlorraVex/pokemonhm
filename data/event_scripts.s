@@ -1743,3 +1743,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/maptest/scripts.inc"
 
 	.include "data/maps/BurntForest/scripts.inc"
+
+	.include "data/maps/RadiantBunker/scripts.inc"

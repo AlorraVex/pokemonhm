@@ -9353,6 +9353,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/BurntForest/border.bin",
       "blockdata_filepath": "data/layouts/BurntForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_RADIANT_BUNKER",
+      "name": "RadiantBunker_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/RadiantBunker/border.bin",
+      "blockdata_filepath": "data/layouts/RadiantBunker/map.bin"
     }
   ]
 }

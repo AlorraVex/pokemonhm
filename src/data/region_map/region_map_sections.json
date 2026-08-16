@@ -1600,14 +1600,6 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_DESERT_UNDERPASS",
-      "name": "Secret Village",
-      "x": 2,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
       "id": "MAPSEC_ALTERING_CAVE",
       "name": "ALTERING CAVE",
       "x": 6,
@@ -1626,6 +1618,17 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_BURNT_FOREST",
+      "name": "BURNT FOREST"
+    },
+    {
+      "id": "MAPSEC_RADIANT_BUNKER",
+      "name": "Radiant Bunker"
+    },
+    {
+      "id": "MAPSEC_DESERT_UNDERPASS"
     }
   ]
 }

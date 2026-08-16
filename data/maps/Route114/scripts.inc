@@ -398,625 +398,649 @@ Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE$"
 
 Route114_EventScript_FirstFreezeDry::
-# 206 "data/maps/Route114/scripts.pory"
+# 204 "data/maps/Route114/scripts.pory"
 	lock
-# 207 "data/maps/Route114/scripts.pory"
+# 205 "data/maps/Route114/scripts.pory"
 	goto_if_unset FLAG_FREEZE_DRY_DISCOVERED, Route114_EventScript_FirstFreezeDry_2
-# 254 "data/maps/Route114/scripts.pory"
+# 255 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FirstFreezeDry_8
-# 275 "data/maps/Route114/scripts.pory"
+# 279 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FirstFreezeDry_22
-# 297 "data/maps/Route114/scripts.pory"
+# 304 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FirstFreezeDry_29
 Route114_EventScript_FirstFreezeDry_1:
-# 308 "data/maps/Route114/scripts.pory"
+# 315 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 Route114_EventScript_FirstFreezeDry_2:
-# 208 "data/maps/Route114/scripts.pory"
+# 206 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_0, SPECIES_EEVEE
-# 209 "data/maps/Route114/scripts.pory"
+# 207 "data/maps/Route114/scripts.pory"
 	specialvar VAR_RESULT, CheckLeadMonSpecies
-# 210 "data/maps/Route114/scripts.pory"
+# 208 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_5
-# 246 "data/maps/Route114/scripts.pory"
+# 247 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_5:
-# 211 "data/maps/Route114/scripts.pory"
+# 209 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_0
-# 213 "data/maps/Route114/scripts.pory"
+# 211 "data/maps/Route114/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, Route114_EventScript_FirstFreezeDry_Text_1, Route114_EventScript_FirstFreezeDry_Text_2, Route114_EventScript_FirstFreezeDry_Text_3, Route114_EventScript_FirstFreezeDry_Text_4
-# 214 "data/maps/Route114/scripts.pory"
+# 212 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Route114_EventScript_FirstFreezeDry_11
-# 218 "data/maps/Route114/scripts.pory"
+# 216 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Route114_EventScript_FirstFreezeDry_12
-# 222 "data/maps/Route114/scripts.pory"
+# 220 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Route114_EventScript_FirstFreezeDry_13
-# 226 "data/maps/Route114/scripts.pory"
+# 224 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq Route114_EventScript_FirstFreezeDry_14
-# 242 "data/maps/Route114/scripts.pory"
+# 243 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_9
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_8:
-# 255 "data/maps/Route114/scripts.pory"
-	checkspecies SPECIES_EEVEE
 # 256 "data/maps/Route114/scripts.pory"
+	checkspecies SPECIES_EEVEE
+# 257 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_20
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_11:
-# 215 "data/maps/Route114/scripts.pory"
+# 213 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_5
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_12:
-# 219 "data/maps/Route114/scripts.pory"
+# 217 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_6
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_13:
-# 223 "data/maps/Route114/scripts.pory"
+# 221 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_7
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_14:
-# 227 "data/maps/Route114/scripts.pory"
+# 225 "data/maps/Route114/scripts.pory"
 	delay 16
-# 228 "data/maps/Route114/scripts.pory"
+# 226 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+# 227 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 228 "data/maps/Route114/scripts.pory"
+	delay 8
 # 229 "data/maps/Route114/scripts.pory"
-	delay 16
+	playse SE_M_BLIZZARD2
 # 230 "data/maps/Route114/scripts.pory"
-	setmetatile 12, 13, 0x135, 0
-# 231 "data/maps/Route114/scripts.pory"
-	setmetatile 11, 13, 0x135, 0
-# 232 "data/maps/Route114/scripts.pory"
-	setmetatile 10, 13, 0x135, 0
-# 233 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 13, 0x135, 0
-# 234 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 235 "data/maps/Route114/scripts.pory"
 	delay 16
+# 231 "data/maps/Route114/scripts.pory"
+	setmetatile 12, 13, 0x135, 0
+# 232 "data/maps/Route114/scripts.pory"
+	setmetatile 11, 13, 0x135, 0
+# 233 "data/maps/Route114/scripts.pory"
+	setmetatile 10, 13, 0x135, 0
+# 234 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 13, 0x135, 0
+# 235 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
 # 236 "data/maps/Route114/scripts.pory"
-	setvar VAR_TEMP_1, 1
+	delay 16
 # 237 "data/maps/Route114/scripts.pory"
-	setflag FLAG_FREEZE_DRY_DISCOVERED
+	setvar VAR_TEMP_1, 1
 # 238 "data/maps/Route114/scripts.pory"
+	setflag FLAG_FREEZE_DRY_DISCOVERED
+# 239 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_8
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_20:
-# 257 "data/maps/Route114/scripts.pory"
-	msgbox MakeBridgeEevee, MSGBOX_YESNO
 # 258 "data/maps/Route114/scripts.pory"
+	msgbox MakeBridgeEevee, MSGBOX_YESNO
+# 259 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FirstFreezeDry_25
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_22:
-# 276 "data/maps/Route114/scripts.pory"
+# 280 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_GLACEON
-# 277 "data/maps/Route114/scripts.pory"
+# 281 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FirstFreezeDry_27
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_25:
-# 259 "data/maps/Route114/scripts.pory"
-	delay 16
 # 260 "data/maps/Route114/scripts.pory"
-	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
+	delay 16
 # 261 "data/maps/Route114/scripts.pory"
-	delay 16
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
 # 262 "data/maps/Route114/scripts.pory"
-	setmetatile 12, 13, 0x135, 0
+	waitmoncry
 # 263 "data/maps/Route114/scripts.pory"
-	setmetatile 11, 13, 0x135, 0
+	delay 8
 # 264 "data/maps/Route114/scripts.pory"
-	setmetatile 10, 13, 0x135, 0
+	playse SE_M_BLIZZARD2
 # 265 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 13, 0x135, 0
-# 266 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 267 "data/maps/Route114/scripts.pory"
 	delay 16
+# 266 "data/maps/Route114/scripts.pory"
+	setmetatile 12, 13, 0x135, 0
+# 267 "data/maps/Route114/scripts.pory"
+	setmetatile 11, 13, 0x135, 0
 # 268 "data/maps/Route114/scripts.pory"
+	setmetatile 10, 13, 0x135, 0
+# 269 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 13, 0x135, 0
+# 270 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 271 "data/maps/Route114/scripts.pory"
+	delay 16
+# 272 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_27:
-# 278 "data/maps/Route114/scripts.pory"
+# 282 "data/maps/Route114/scripts.pory"
 	bufferleadmonspeciesname 0
-# 279 "data/maps/Route114/scripts.pory"
+# 283 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeGlaceon, MSGBOX_YESNO
-# 280 "data/maps/Route114/scripts.pory"
+# 284 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FirstFreezeDry_31
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_29:
-# 298 "data/maps/Route114/scripts.pory"
+# 305 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FirstFreezeDry_1
 
 Route114_EventScript_FirstFreezeDry_31:
-# 281 "data/maps/Route114/scripts.pory"
-	delay 16
-# 282 "data/maps/Route114/scripts.pory"
-	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
-# 283 "data/maps/Route114/scripts.pory"
-	delay 16
-# 284 "data/maps/Route114/scripts.pory"
-	setmetatile 12, 13, 0x135, 0
 # 285 "data/maps/Route114/scripts.pory"
-	setmetatile 11, 13, 0x135, 0
-# 286 "data/maps/Route114/scripts.pory"
-	setmetatile 10, 13, 0x135, 0
-# 287 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 13, 0x135, 0
-# 288 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 289 "data/maps/Route114/scripts.pory"
 	delay 16
+# 286 "data/maps/Route114/scripts.pory"
+	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
+# 287 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 288 "data/maps/Route114/scripts.pory"
+	delay 8
+# 289 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
 # 290 "data/maps/Route114/scripts.pory"
+	delay 16
+# 291 "data/maps/Route114/scripts.pory"
+	setmetatile 12, 13, 0x135, 0
+# 292 "data/maps/Route114/scripts.pory"
+	setmetatile 11, 13, 0x135, 0
+# 293 "data/maps/Route114/scripts.pory"
+	setmetatile 10, 13, 0x135, 0
+# 294 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 13, 0x135, 0
+# 295 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 296 "data/maps/Route114/scripts.pory"
+	delay 16
+# 297 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	goto Route114_EventScript_FirstFreezeDry_1
 
 
 Route114_EventScript_FreezeDry1::
-# 314 "data/maps/Route114/scripts.pory"
+# 321 "data/maps/Route114/scripts.pory"
 	lock
-# 315 "data/maps/Route114/scripts.pory"
+# 322 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FreezeDry1_2
-# 336 "data/maps/Route114/scripts.pory"
+# 346 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FreezeDry1_7
-# 358 "data/maps/Route114/scripts.pory"
+# 371 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq Route114_EventScript_FreezeDry1_14
 Route114_EventScript_FreezeDry1_1:
-# 367 "data/maps/Route114/scripts.pory"
+# 380 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 Route114_EventScript_FreezeDry1_2:
-# 316 "data/maps/Route114/scripts.pory"
+# 323 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_EEVEE
-# 317 "data/maps/Route114/scripts.pory"
+# 324 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry1_5
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_5:
-# 318 "data/maps/Route114/scripts.pory"
+# 325 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeEevee, MSGBOX_YESNO
-# 319 "data/maps/Route114/scripts.pory"
+# 326 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry1_10
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_7:
-# 337 "data/maps/Route114/scripts.pory"
+# 347 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_GLACEON
-# 338 "data/maps/Route114/scripts.pory"
+# 348 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry1_12
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_10:
-# 320 "data/maps/Route114/scripts.pory"
-	delay 16
-# 321 "data/maps/Route114/scripts.pory"
-	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
-# 322 "data/maps/Route114/scripts.pory"
-	delay 16
-# 323 "data/maps/Route114/scripts.pory"
-	setmetatile 12, 13, 0x135, 0
-# 324 "data/maps/Route114/scripts.pory"
-	setmetatile 11, 13, 0x135, 0
-# 325 "data/maps/Route114/scripts.pory"
-	setmetatile 10, 13, 0x135, 0
-# 326 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 13, 0x135, 0
 # 327 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 328 "data/maps/Route114/scripts.pory"
 	delay 16
+# 328 "data/maps/Route114/scripts.pory"
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
 # 329 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 330 "data/maps/Route114/scripts.pory"
+	delay 8
+# 331 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 332 "data/maps/Route114/scripts.pory"
+	delay 16
+# 333 "data/maps/Route114/scripts.pory"
+	setmetatile 12, 13, 0x135, 0
+# 334 "data/maps/Route114/scripts.pory"
+	setmetatile 11, 13, 0x135, 0
+# 335 "data/maps/Route114/scripts.pory"
+	setmetatile 10, 13, 0x135, 0
+# 336 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 13, 0x135, 0
+# 337 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 338 "data/maps/Route114/scripts.pory"
+	delay 16
+# 339 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_12:
-# 339 "data/maps/Route114/scripts.pory"
+# 349 "data/maps/Route114/scripts.pory"
 	bufferleadmonspeciesname 0
-# 340 "data/maps/Route114/scripts.pory"
+# 350 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeGlaceon, MSGBOX_YESNO
-# 341 "data/maps/Route114/scripts.pory"
+# 351 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry1_16
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_14:
-# 359 "data/maps/Route114/scripts.pory"
+# 372 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FreezeDry1_1
 
 Route114_EventScript_FreezeDry1_16:
-# 342 "data/maps/Route114/scripts.pory"
+# 352 "data/maps/Route114/scripts.pory"
 	delay 16
-# 343 "data/maps/Route114/scripts.pory"
+# 353 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
-# 344 "data/maps/Route114/scripts.pory"
+# 354 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 355 "data/maps/Route114/scripts.pory"
+	delay 8
+# 356 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 357 "data/maps/Route114/scripts.pory"
 	delay 16
-# 345 "data/maps/Route114/scripts.pory"
+# 358 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 0
-# 346 "data/maps/Route114/scripts.pory"
+# 359 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 0
-# 347 "data/maps/Route114/scripts.pory"
+# 360 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 0
-# 348 "data/maps/Route114/scripts.pory"
+# 361 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 0
-# 349 "data/maps/Route114/scripts.pory"
+# 362 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 350 "data/maps/Route114/scripts.pory"
+# 363 "data/maps/Route114/scripts.pory"
 	delay 16
-# 351 "data/maps/Route114/scripts.pory"
+# 364 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	goto Route114_EventScript_FreezeDry1_1
 
 
 Route114_EventScript_FreezeDry2::
-# 373 "data/maps/Route114/scripts.pory"
+# 386 "data/maps/Route114/scripts.pory"
 	lock
-# 374 "data/maps/Route114/scripts.pory"
+# 387 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_2, 0
 	goto_if_eq Route114_EventScript_FreezeDry2_2
-# 394 "data/maps/Route114/scripts.pory"
+# 410 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_2, 0
 	goto_if_eq Route114_EventScript_FreezeDry2_7
-# 415 "data/maps/Route114/scripts.pory"
+# 434 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_2, 0
 	goto_if_eq Route114_EventScript_FreezeDry2_14
 Route114_EventScript_FreezeDry2_1:
-# 424 "data/maps/Route114/scripts.pory"
+# 443 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 Route114_EventScript_FreezeDry2_2:
-# 375 "data/maps/Route114/scripts.pory"
+# 388 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_EEVEE
-# 376 "data/maps/Route114/scripts.pory"
+# 389 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry2_5
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_5:
-# 377 "data/maps/Route114/scripts.pory"
+# 390 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeEevee, MSGBOX_YESNO
-# 378 "data/maps/Route114/scripts.pory"
+# 391 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry2_10
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_7:
-# 395 "data/maps/Route114/scripts.pory"
+# 411 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_GLACEON
-# 396 "data/maps/Route114/scripts.pory"
+# 412 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry2_12
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_10:
-# 379 "data/maps/Route114/scripts.pory"
+# 392 "data/maps/Route114/scripts.pory"
 	delay 16
-# 380 "data/maps/Route114/scripts.pory"
+# 393 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
-# 381 "data/maps/Route114/scripts.pory"
+# 394 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 395 "data/maps/Route114/scripts.pory"
+	delay 8
+# 396 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 397 "data/maps/Route114/scripts.pory"
 	delay 16
-# 382 "data/maps/Route114/scripts.pory"
+# 398 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 16, 0x135, 0
-# 383 "data/maps/Route114/scripts.pory"
+# 399 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 17, 0x135, 0
-# 384 "data/maps/Route114/scripts.pory"
+# 400 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 18, 0x135, 0
-# 385 "data/maps/Route114/scripts.pory"
+# 401 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 386 "data/maps/Route114/scripts.pory"
+# 402 "data/maps/Route114/scripts.pory"
 	delay 16
-# 387 "data/maps/Route114/scripts.pory"
+# 403 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_2, 1
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_12:
-# 397 "data/maps/Route114/scripts.pory"
+# 413 "data/maps/Route114/scripts.pory"
 	bufferleadmonspeciesname 0
-# 398 "data/maps/Route114/scripts.pory"
+# 414 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeGlaceon, MSGBOX_YESNO
-# 399 "data/maps/Route114/scripts.pory"
+# 415 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry2_16
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_14:
-# 416 "data/maps/Route114/scripts.pory"
+# 435 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FreezeDry2_1
 
 Route114_EventScript_FreezeDry2_16:
-# 400 "data/maps/Route114/scripts.pory"
+# 416 "data/maps/Route114/scripts.pory"
 	delay 16
-# 401 "data/maps/Route114/scripts.pory"
+# 417 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
-# 402 "data/maps/Route114/scripts.pory"
+# 418 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 419 "data/maps/Route114/scripts.pory"
+	delay 8
+# 420 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 421 "data/maps/Route114/scripts.pory"
 	delay 16
-# 403 "data/maps/Route114/scripts.pory"
+# 422 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 16, 0x135, 0
-# 404 "data/maps/Route114/scripts.pory"
+# 423 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 17, 0x135, 0
-# 405 "data/maps/Route114/scripts.pory"
+# 424 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 18, 0x135, 0
-# 406 "data/maps/Route114/scripts.pory"
+# 425 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 407 "data/maps/Route114/scripts.pory"
+# 426 "data/maps/Route114/scripts.pory"
 	delay 16
-# 408 "data/maps/Route114/scripts.pory"
+# 427 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_2, 1
 	goto Route114_EventScript_FreezeDry2_1
 
 
 Route114_EventScript_FreezeDry3::
-# 430 "data/maps/Route114/scripts.pory"
+# 449 "data/maps/Route114/scripts.pory"
 	lock
-# 431 "data/maps/Route114/scripts.pory"
-	compare VAR_TEMP_3, 0
-	goto_if_eq Route114_EventScript_FreezeDry3_2
 # 450 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_3, 0
+	goto_if_eq Route114_EventScript_FreezeDry3_2
+# 472 "data/maps/Route114/scripts.pory"
+	compare VAR_TEMP_3, 0
 	goto_if_eq Route114_EventScript_FreezeDry3_7
-# 470 "data/maps/Route114/scripts.pory"
+# 495 "data/maps/Route114/scripts.pory"
 	compare VAR_TEMP_3, 0
 	goto_if_eq Route114_EventScript_FreezeDry3_14
 Route114_EventScript_FreezeDry3_1:
-# 479 "data/maps/Route114/scripts.pory"
+# 504 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 Route114_EventScript_FreezeDry3_2:
-# 432 "data/maps/Route114/scripts.pory"
+# 451 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_EEVEE
-# 433 "data/maps/Route114/scripts.pory"
+# 452 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry3_5
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_5:
-# 434 "data/maps/Route114/scripts.pory"
+# 453 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeEevee, MSGBOX_YESNO
-# 435 "data/maps/Route114/scripts.pory"
+# 454 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry3_10
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_7:
-# 451 "data/maps/Route114/scripts.pory"
+# 473 "data/maps/Route114/scripts.pory"
 	checkspecies SPECIES_GLACEON
-# 452 "data/maps/Route114/scripts.pory"
+# 474 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_EventScript_FreezeDry3_12
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_10:
-# 436 "data/maps/Route114/scripts.pory"
+# 455 "data/maps/Route114/scripts.pory"
 	delay 16
-# 437 "data/maps/Route114/scripts.pory"
+# 456 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
-# 438 "data/maps/Route114/scripts.pory"
+# 457 "data/maps/Route114/scripts.pory"
+	delay 8
+# 458 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 459 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 460 "data/maps/Route114/scripts.pory"
 	delay 16
-# 439 "data/maps/Route114/scripts.pory"
+# 461 "data/maps/Route114/scripts.pory"
 	setmetatile 8, 27, 0x135, 0
-# 440 "data/maps/Route114/scripts.pory"
+# 462 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 27, 0x135, 0
-# 441 "data/maps/Route114/scripts.pory"
+# 463 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 442 "data/maps/Route114/scripts.pory"
+# 464 "data/maps/Route114/scripts.pory"
 	delay 16
-# 443 "data/maps/Route114/scripts.pory"
+# 465 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_3, 1
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_12:
-# 453 "data/maps/Route114/scripts.pory"
+# 475 "data/maps/Route114/scripts.pory"
 	bufferleadmonspeciesname 0
-# 454 "data/maps/Route114/scripts.pory"
+# 476 "data/maps/Route114/scripts.pory"
 	msgbox MakeBridgeGlaceon, MSGBOX_YESNO
-# 455 "data/maps/Route114/scripts.pory"
+# 477 "data/maps/Route114/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route114_EventScript_FreezeDry3_16
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_14:
-# 471 "data/maps/Route114/scripts.pory"
+# 496 "data/maps/Route114/scripts.pory"
 	msgbox Route114_EventScript_FirstFreezeDry_Text_10
 	goto Route114_EventScript_FreezeDry3_1
 
 Route114_EventScript_FreezeDry3_16:
-# 456 "data/maps/Route114/scripts.pory"
+# 478 "data/maps/Route114/scripts.pory"
 	delay 16
-# 457 "data/maps/Route114/scripts.pory"
+# 479 "data/maps/Route114/scripts.pory"
 	playmoncry SPECIES_GLACEON, CRY_MODE_NORMAL
-# 458 "data/maps/Route114/scripts.pory"
+# 480 "data/maps/Route114/scripts.pory"
+	waitmoncry
+# 481 "data/maps/Route114/scripts.pory"
+	delay 8
+# 482 "data/maps/Route114/scripts.pory"
+	playse SE_M_BLIZZARD2
+# 483 "data/maps/Route114/scripts.pory"
 	delay 16
-# 459 "data/maps/Route114/scripts.pory"
+# 484 "data/maps/Route114/scripts.pory"
 	setmetatile 8, 27, 0x135, 0
-# 460 "data/maps/Route114/scripts.pory"
+# 485 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 27, 0x135, 0
-# 461 "data/maps/Route114/scripts.pory"
+# 486 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 462 "data/maps/Route114/scripts.pory"
+# 487 "data/maps/Route114/scripts.pory"
 	delay 16
-# 463 "data/maps/Route114/scripts.pory"
+# 488 "data/maps/Route114/scripts.pory"
 	setvar VAR_TEMP_3, 1
 	goto Route114_EventScript_FreezeDry3_1
 
 
 Route114_Trigger_Bridge1CollisionOnSurf::
-# 488 "data/maps/Route114/scripts.pory"
+# 513 "data/maps/Route114/scripts.pory"
 	lockall
-# 489 "data/maps/Route114/scripts.pory"
+# 514 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 1
-# 490 "data/maps/Route114/scripts.pory"
+# 515 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 1
-# 491 "data/maps/Route114/scripts.pory"
+# 516 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 1
-# 492 "data/maps/Route114/scripts.pory"
+# 517 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 1
-# 493 "data/maps/Route114/scripts.pory"
+# 518 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 494 "data/maps/Route114/scripts.pory"
+# 519 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge1CollisionOffSurf::
-# 501 "data/maps/Route114/scripts.pory"
+# 526 "data/maps/Route114/scripts.pory"
 	lockall
-# 502 "data/maps/Route114/scripts.pory"
+# 527 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x192, 0
-# 503 "data/maps/Route114/scripts.pory"
+# 528 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x170, 0
-# 504 "data/maps/Route114/scripts.pory"
+# 529 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x170, 0
-# 505 "data/maps/Route114/scripts.pory"
+# 530 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x190, 0
-# 506 "data/maps/Route114/scripts.pory"
+# 531 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 507 "data/maps/Route114/scripts.pory"
+# 532 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge1CollisionOffLand::
-# 514 "data/maps/Route114/scripts.pory"
+# 539 "data/maps/Route114/scripts.pory"
 	lockall
-# 515 "data/maps/Route114/scripts.pory"
+# 540 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x135, 0
-# 516 "data/maps/Route114/scripts.pory"
+# 541 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x135, 0
-# 517 "data/maps/Route114/scripts.pory"
+# 542 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x135, 0
-# 518 "data/maps/Route114/scripts.pory"
+# 543 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x135, 0
-# 519 "data/maps/Route114/scripts.pory"
+# 544 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 520 "data/maps/Route114/scripts.pory"
+# 545 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge1CollisionOnLand::
-# 527 "data/maps/Route114/scripts.pory"
+# 552 "data/maps/Route114/scripts.pory"
 	lockall
-# 528 "data/maps/Route114/scripts.pory"
+# 553 "data/maps/Route114/scripts.pory"
 	setmetatile 12, 13, 0x192, 1
-# 529 "data/maps/Route114/scripts.pory"
+# 554 "data/maps/Route114/scripts.pory"
 	setmetatile 11, 13, 0x170, 1
-# 530 "data/maps/Route114/scripts.pory"
+# 555 "data/maps/Route114/scripts.pory"
 	setmetatile 10, 13, 0x170, 1
-# 531 "data/maps/Route114/scripts.pory"
+# 556 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 13, 0x190, 1
-# 532 "data/maps/Route114/scripts.pory"
+# 557 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 533 "data/maps/Route114/scripts.pory"
+# 558 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge2CollisionOnSurf::
-# 542 "data/maps/Route114/scripts.pory"
+# 567 "data/maps/Route114/scripts.pory"
 	lockall
-# 543 "data/maps/Route114/scripts.pory"
+# 568 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 16, 0x135, 1
-# 544 "data/maps/Route114/scripts.pory"
+# 569 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 17, 0x135, 1
-# 545 "data/maps/Route114/scripts.pory"
+# 570 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 18, 0x135, 1
-# 546 "data/maps/Route114/scripts.pory"
+# 571 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 547 "data/maps/Route114/scripts.pory"
+# 572 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge2CollisionOffSurf::
-# 554 "data/maps/Route114/scripts.pory"
+# 579 "data/maps/Route114/scripts.pory"
 	lockall
-# 555 "data/maps/Route114/scripts.pory"
+# 580 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 16, 0x189, 0
-# 556 "data/maps/Route114/scripts.pory"
+# 581 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 17, 0x170, 0
-# 557 "data/maps/Route114/scripts.pory"
+# 582 "data/maps/Route114/scripts.pory"
 	setmetatile 3, 18, 0x170, 0
-# 558 "data/maps/Route114/scripts.pory"
+# 583 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 559 "data/maps/Route114/scripts.pory"
+# 584 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge2CollisionOffLand::
-# 566 "data/maps/Route114/scripts.pory"
+# 591 "data/maps/Route114/scripts.pory"
 	lockall
-# 567 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 16, 0x135, 0
-# 568 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 17, 0x135, 0
-# 569 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 18, 0x135, 0
-# 570 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 571 "data/maps/Route114/scripts.pory"
-	releaseall
-	end
-
-
-Route114_Trigger_Bridge2CollisionOnLand::
-# 578 "data/maps/Route114/scripts.pory"
-	lockall
-# 579 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 16, 0x189, 1
-# 580 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 17, 0x170, 1
-# 581 "data/maps/Route114/scripts.pory"
-	setmetatile 3, 18, 0x170, 1
-# 582 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
-# 583 "data/maps/Route114/scripts.pory"
-	releaseall
-	end
-
-
-Route114_Trigger_Bridge3CollisionOnSurf::
 # 592 "data/maps/Route114/scripts.pory"
-	lockall
+	setmetatile 3, 16, 0x135, 0
 # 593 "data/maps/Route114/scripts.pory"
-	setmetatile 8, 27, 0x135, 1
+	setmetatile 3, 17, 0x135, 0
 # 594 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 27, 0x135, 1
+	setmetatile 3, 18, 0x135, 0
 # 595 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
 # 596 "data/maps/Route114/scripts.pory"
@@ -1024,103 +1048,133 @@ Route114_Trigger_Bridge3CollisionOnSurf::
 	end
 
 
-Route114_Trigger_Bridge3CollisionOffSurf::
+Route114_Trigger_Bridge2CollisionOnLand::
 # 603 "data/maps/Route114/scripts.pory"
 	lockall
 # 604 "data/maps/Route114/scripts.pory"
-	setmetatile 8, 27, 0x190, 0
+	setmetatile 3, 16, 0x189, 1
 # 605 "data/maps/Route114/scripts.pory"
-	setmetatile 9, 27, 0x192, 0
+	setmetatile 3, 17, 0x170, 1
 # 606 "data/maps/Route114/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 3, 18, 0x170, 1
 # 607 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 608 "data/maps/Route114/scripts.pory"
+	releaseall
+	end
+
+
+Route114_Trigger_Bridge3CollisionOnSurf::
+# 617 "data/maps/Route114/scripts.pory"
+	lockall
+# 618 "data/maps/Route114/scripts.pory"
+	setmetatile 8, 27, 0x135, 1
+# 619 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 27, 0x135, 1
+# 620 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 621 "data/maps/Route114/scripts.pory"
+	releaseall
+	end
+
+
+Route114_Trigger_Bridge3CollisionOffSurf::
+# 628 "data/maps/Route114/scripts.pory"
+	lockall
+# 629 "data/maps/Route114/scripts.pory"
+	setmetatile 8, 27, 0x190, 0
+# 630 "data/maps/Route114/scripts.pory"
+	setmetatile 9, 27, 0x192, 0
+# 631 "data/maps/Route114/scripts.pory"
+	special DrawWholeMapView
+# 632 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge3CollisionOffLand::
-# 614 "data/maps/Route114/scripts.pory"
+# 639 "data/maps/Route114/scripts.pory"
 	lockall
-# 615 "data/maps/Route114/scripts.pory"
+# 640 "data/maps/Route114/scripts.pory"
 	setmetatile 8, 27, 0x135, 0
-# 616 "data/maps/Route114/scripts.pory"
+# 641 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 27, 0x135, 0
-# 617 "data/maps/Route114/scripts.pory"
+# 642 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 618 "data/maps/Route114/scripts.pory"
+# 643 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_Trigger_Bridge3CollisionOnLand::
-# 625 "data/maps/Route114/scripts.pory"
+# 650 "data/maps/Route114/scripts.pory"
 	lockall
-# 626 "data/maps/Route114/scripts.pory"
+# 651 "data/maps/Route114/scripts.pory"
 	setmetatile 8, 27, 0x190, 1
-# 627 "data/maps/Route114/scripts.pory"
+# 652 "data/maps/Route114/scripts.pory"
 	setmetatile 9, 27, 0x192, 1
-# 628 "data/maps/Route114/scripts.pory"
+# 653 "data/maps/Route114/scripts.pory"
 	special DrawWholeMapView
-# 629 "data/maps/Route114/scripts.pory"
+# 654 "data/maps/Route114/scripts.pory"
 	releaseall
 	end
 
 
 Route114_EventScript_FirstFreezeDry_Text_0:
-# 211 "data/maps/Route114/scripts.pory"
+# 209 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "Have Eevee use a move?$"
 
 Route114_EventScript_FirstFreezeDry_Text_1:
-# 213 "data/maps/Route114/scripts.pory"
+# 211 "data/maps/Route114/scripts.pory"
 	.string "Mirror Move$"
 
 Route114_EventScript_FirstFreezeDry_Text_2:
-# 213 "data/maps/Route114/scripts.pory"
+# 211 "data/maps/Route114/scripts.pory"
 	.string "Helping Hand$"
 
 Route114_EventScript_FirstFreezeDry_Text_3:
-# 213 "data/maps/Route114/scripts.pory"
+# 211 "data/maps/Route114/scripts.pory"
 	.string "Bite$"
 
 Route114_EventScript_FirstFreezeDry_Text_4:
-# 213 "data/maps/Route114/scripts.pory"
+# 211 "data/maps/Route114/scripts.pory"
 	.string "Freeze Dry$"
 
 Route114_EventScript_FirstFreezeDry_Text_5:
-# 215 "data/maps/Route114/scripts.pory"
+# 213 "data/maps/Route114/scripts.pory"
 	.string "Eevee used the water's reflection to do\n"
 	.string "its hair.$"
 
 Route114_EventScript_FirstFreezeDry_Text_6:
-# 219 "data/maps/Route114/scripts.pory"
+# 217 "data/maps/Route114/scripts.pory"
 	.string "Eevee used the Help action. You\n"
 	.string "gain advantage on your next d20 test!\l$"
 
 Route114_EventScript_FirstFreezeDry_Text_7:
-# 223 "data/maps/Route114/scripts.pory"
+# 221 "data/maps/Route114/scripts.pory"
 	.string "Eevee bites the water.\n"
 	.string "The water does not respond.$"
 
 Route114_EventScript_FirstFreezeDry_Text_8:
-# 238 "data/maps/Route114/scripts.pory"
+# 239 "data/maps/Route114/scripts.pory"
 	.string "Eevee made a bridge with Freeze Dry!$"
 
 Route114_EventScript_FirstFreezeDry_Text_9:
-# 242 "data/maps/Route114/scripts.pory"
+# 243 "data/maps/Route114/scripts.pory"
 	.string "It didn't seem to have any effect.$"
 
 Route114_EventScript_FirstFreezeDry_Text_10:
-# 246 "data/maps/Route114/scripts.pory"
+# 247 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "A pokemon may be able to freeze it.$"
 
 MakeBridgeEevee::
-# 634 "data/maps/Route114/scripts.pory"
+# 659 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "Have Eevee use Freeze Dry?$"
 
 MakeBridgeGlaceon::
-# 639 "data/maps/Route114/scripts.pory"
+# 664 "data/maps/Route114/scripts.pory"
 	.string "The water here is icy.\n"
 	.string "Have Glaceon use Glaciate?$"

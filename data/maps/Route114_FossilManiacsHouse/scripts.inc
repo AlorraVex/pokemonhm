@@ -106,3 +106,18 @@ Route114_FossilManiacsHouse_Text_CrammedWithBooks:
 	.string "STONES, SOIL, AND ROCK…\p"
 # 54 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
 	.string "It's crammed with books.$"
+
+FossilManiacsHouse_EventScript_TV::
+# 58 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
+	lockall
+# 59 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
+	msgbox FossilManiacsHouse_EventScript_TV_Text_0
+# 61 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
+	releaseall
+	end
+
+
+FossilManiacsHouse_EventScript_TV_Text_0:
+# 59 "data/maps/Route114_FossilManiacsHouse/scripts.pory"
+	.string "It's an emergency broadcast telling\n"
+	.string "everybody to stay indoors.$"

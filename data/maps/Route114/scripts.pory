@@ -200,8 +200,6 @@ Route114_Text_LanettesHouse:
 
 `
 
-
-
 script Route114_EventScript_FirstFreezeDry {
 	lock
 	if (flag (FLAG_FREEZE_DRY_DISCOVERED) == FALSE){
@@ -226,6 +224,9 @@ script Route114_EventScript_FirstFreezeDry {
 			elif (var(VAR_RESULT) == 3){
 			delay(16)
 			playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+			waitmoncry
+			delay(8)
+			playse(SE_M_BLIZZARD2)
 			delay(16)
 			setmetatile(12, 13, 0x135, 0)
        		setmetatile(11, 13, 0x135, 0)
@@ -258,6 +259,9 @@ script Route114_EventScript_FirstFreezeDry {
 				if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(12, 13, 0x135, 0)
        				setmetatile(11, 13, 0x135, 0)
@@ -280,6 +284,9 @@ script Route114_EventScript_FirstFreezeDry {
 					if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(12, 13, 0x135, 0)
 					setmetatile(11, 13, 0x135, 0)
@@ -319,6 +326,9 @@ script Route114_EventScript_FreezeDry1 {
 				if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(12, 13, 0x135, 0)
        				setmetatile(11, 13, 0x135, 0)
@@ -341,6 +351,9 @@ script Route114_EventScript_FreezeDry1 {
 					if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(12, 13, 0x135, 0)
 					setmetatile(11, 13, 0x135, 0)
@@ -378,6 +391,9 @@ script Route114_EventScript_FreezeDry2 {
 				if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(3, 16, 0x135, 0)
        				setmetatile(3, 17, 0x135, 0)
@@ -399,6 +415,9 @@ script Route114_EventScript_FreezeDry2 {
 					if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
 					setmetatile(3, 16, 0x135, 0)
        				setmetatile(3, 17, 0x135, 0)
@@ -435,6 +454,9 @@ script Route114_EventScript_FreezeDry3 {
 				if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+					delay(8)
+					waitmoncry
+					playse(SE_M_BLIZZARD2)
 					delay(16)
        				setmetatile(8, 27, 0x135, 0)
         			setmetatile(9, 27, 0x135, 0)
@@ -455,6 +477,9 @@ script Route114_EventScript_FreezeDry3 {
 					if(var(VAR_RESULT) == YES){
 					delay(16)
 					playmoncry (SPECIES_GLACEON, CRY_MODE_NORMAL)
+					waitmoncry
+					delay(8)
+					playse(SE_M_BLIZZARD2)
 					delay(16)
        				setmetatile(8, 27, 0x135, 0)
         			setmetatile(9, 27, 0x135, 0)

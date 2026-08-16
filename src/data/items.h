@@ -14677,6 +14677,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_AbilityShield,
     },
 
+    [ITEM_BERRY_KEY] =
+    {
+        .name = ITEM_NAME("Berry Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A key in the\n"
+            "shape of a\n"
+            "berry."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_StorageKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
+
 // GEN 9 ITEMS
 
     [ITEM_CLEAR_AMULET] =

@@ -91,7 +91,7 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     delay(16)
-    playse (SE_PIN)
+    playse(SE_PIN)
     delay(8)
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, Ghost)
     waitmovement (0)
@@ -116,6 +116,8 @@ script BurntForest_EeeveeTrainerSceneLeft{
     "your hand.\p"
     "It seems like it wants to join you.")
     delay(16)
+    playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
+    waitmoncry
     delay(16)
     destroyfollowernpc
     setvar (0x40F7, 0)
