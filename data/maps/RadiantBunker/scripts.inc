@@ -242,12 +242,8 @@ NicknamePichu::
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePichu_1
 # 162 "data/maps/RadiantBunker/scripts.pory"
-	setflag FLAG_REMOVE_WARP_FADE
+	updatefollowingmon
 # 163 "data/maps/RadiantBunker/scripts.pory"
-	warpsilent MAP_RADIANT_BUNKER, 1, 7
-# 164 "data/maps/RadiantBunker/scripts.pory"
-	waitstate
-# 165 "data/maps/RadiantBunker/scripts.pory"
 	releaseall
 	end
 
@@ -260,18 +256,18 @@ NicknamePichu_1:
 
 
 NicknameBoxMon::
-# 173 "data/maps/RadiantBunker/scripts.pory"
+# 171 "data/maps/RadiantBunker/scripts.pory"
 	msgbox NicknamePichu_Text_0, MSGBOX_YESNO
-# 174 "data/maps/RadiantBunker/scripts.pory"
+# 172 "data/maps/RadiantBunker/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 177 "data/maps/RadiantBunker/scripts.pory"
+# 175 "data/maps/RadiantBunker/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 175 "data/maps/RadiantBunker/scripts.pory"
+# 173 "data/maps/RadiantBunker/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -328,7 +324,7 @@ NicknamePichu_Text_0:
 	.string "Give Pichu a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 177 "data/maps/RadiantBunker/scripts.pory"
+# 175 "data/maps/RadiantBunker/scripts.pory"
 	.string "Pichu was transferred to the PC.$"
 
 PowerGenerator::
@@ -347,15 +343,15 @@ StarterChoice::
 	.string "Take it?$"
 
 Starter_NotChosen::
-# 181 "data/maps/RadiantBunker/scripts.pory"
+# 179 "data/maps/RadiantBunker/scripts.pory"
 	.string "You decided to leave it.$"
 
 Computer::
-# 185 "data/maps/RadiantBunker/scripts.pory"
+# 183 "data/maps/RadiantBunker/scripts.pory"
 	.string "Teleporter Status: Off\n"
 	.string "Underpass Passage: Closed\p"
 	.string "Enter password?$"
 
 Correct_Password::
-# 191 "data/maps/RadiantBunker/scripts.pory"
+# 189 "data/maps/RadiantBunker/scripts.pory"
 	.string "Eternity$"

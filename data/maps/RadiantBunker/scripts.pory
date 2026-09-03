@@ -159,9 +159,7 @@ script NicknamePichu{
         call(Common_EventScript_GetGiftMonPartySlot)
         call(Common_EventScript_NameReceivedPartyMon)
     }
-    else{setflag(FLAG_REMOVE_WARP_FADE)
-        warpsilent(MAP_RADIANT_BUNKER, 1, 7)
-        waitstate
+    else{updatefollowingmon
         releaseall
         end
     }
