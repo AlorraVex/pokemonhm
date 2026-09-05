@@ -1302,6 +1302,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     SetGpuReg(REG_OFFSET_BLDY, 0);
     gSaveBlock2Ptr->playerGender = MALE;
     NewGameBirchSpeech_SetDefaultPlayerName(0);
+    SeedRngAndSetTrainerId();
 {
     gSaveBlock2Ptr->playerName[0] = CHAR_Y;
     gSaveBlock2Ptr->playerName[1] = CHAR_o;
