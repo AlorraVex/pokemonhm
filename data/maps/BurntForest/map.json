@@ -97,7 +97,7 @@
       "elevation": 0,
       "var": "VAR_BURNT_FOREST",
       "var_value": "1",
-      "script": "BurntForest_EeeveeTrainerSceneLeft"
+      "script": "BurntForest_EeeveeTrainerScene"
     },
     {
       "type": "trigger",
@@ -106,7 +106,7 @@
       "elevation": 0,
       "var": "VAR_BURNT_FOREST",
       "var_value": "1",
-      "script": "BurntForest_EeeveeTrainerSceneRight"
+      "script": "BurntForest_EeeveeTrainerScene"
     }
   ],
   "bg_events": []

@@ -8,7 +8,7 @@ script BurntForest_EventScript_Ball{
     lockall
     msgbox(TakeBall, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        msgbox("You take the pokeball. 
+        msgbox("You take the Poké Ball. 
         It is cold to the touch.")
         additem(ITEM_POKE_BALL)
         setflag(FLAG_EEVEE_BALL_TAKEN)
@@ -18,8 +18,6 @@ script BurntForest_EventScript_Ball{
         end}
 
     else{
-        msgbox(LeftBall)
-        waitmessage
         releaseall
         end
         }
@@ -51,7 +49,7 @@ script BurntForest_EventScript_Eevee{
         }
 
     else{
-        msgbox("It's a strange, blue eevee.\p" 
+        msgbox("It's a strange, blue Eevee.\p" 
         "You try to approach, but it shies\n"
         "away from you.")
         waitmessage
@@ -64,26 +62,35 @@ script BurntForest_EventScript_Eevee{
 script BurntForest_Trigger_BlockExit{
     lockall
     hidefollowernpc
-    msgbox("Eevee doesn't seem ready to leave\n"
-    "the forest yet.")
+    msgbox("Eevee doesn't seem ready to\n"
+    "leave the forest yet.")
     applymovement(OBJ_EVENT_ID_PLAYER, BlockExit)
     waitmovement (0)
     releaseall
 }
 
-script BurntForest_EeeveeTrainerSceneLeft{
+script BurntForest_EeeveeTrainerScene{
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if(var(VAR_TEMP_0) == 3 && var(VAR_TEMP_1) == 7){
     lockall
     applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindLeft)
     waitmovement (0)
     applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftLeft)
+    waitmovement}
+    else{
+    lockall
+    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftRight)
     waitmovement
+    }
     playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
     waitmoncry
     delay(16)
     msgbox("Upon seeing its former trainer,\n"
     "Eevee's ears fall low.\p"
-    "Eevee gives its trainer and nudge, then\n" 
-    "settles down beside him.")
+    "Eevee gives the body a nudge,\n" 
+    "then settles down beside it.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -98,8 +105,8 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     msgbox("Although you don't hear anything,\n"
-    "Eevee's ears twitch as if it is listening\l"
-    "to something.")
+    "Eevee's ears twitch as if it is\l"
+    "listening to something.")
     waitmessage
     waitbuttonpress
     closemessage
@@ -112,8 +119,8 @@ script BurntForest_EeeveeTrainerSceneLeft{
     delay(16)
     delay(16)
     delay(16)
-    msgbox("Eevee looks at the empty pokeball in\n"
-    "your hand.\p"
+    msgbox("Eevee looks at the empty Poké Ball\n"
+    "in your hand.\p"
     "It seems like it wants to join you.")
     delay(16)
     playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
@@ -128,66 +135,6 @@ script BurntForest_EeeveeTrainerSceneLeft{
     msgbox("Eevee joined the party!")
     call(NicknameEevee)
     end
-}
-
-script BurntForest_EeeveeTrainerSceneRight{
-    lockall
-    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight)
-    waitmovement (0)
-    applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftRight)
-    waitmovement
-    playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
-    waitmoncry
-    delay(16)
-    msgbox("Upon seeing its former trainer,\n"
-    "Eevee's ears fall low.\p"
-    "Eevee gives its trainer and nudge, then\n" 
-    "settles down beside him.")
-    waitmessage
-    waitbuttonpress
-    closemessage
-    delay(16)
-    delay(16)
-    delay(16)
-    delay(16)
-    playse (SE_PIN)
-    delay(8)
-    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, Ghost)
-    waitmovement (0)
-    delay(16)
-    delay(16)
-    msgbox("Although you don't hear anything,\n"
-    "Eevee's ears twitch as if it is listening\l"
-    "to something.")
-    waitmessage
-    waitbuttonpress
-    closemessage
-    delay(16)
-    delay(16)
-    delay(16)
-    delay(16)
-    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, EeveeJoin)
-    waitmovement (0)
-    delay(16)
-    delay(16)
-    delay(16)
-    msgbox("Eevee looks at the empty pokeball in\n"
-    "your hand.\p"
-    "It seems like it wants to join you.")
-    waitmessage
-    waitbuttonpress
-    closemessage
-    delay(16)
-    delay(16)
-    destroyfollowernpc
-    setvar (0x40F7, 0)
-    removeitem(ITEM_POKE_BALL)
-    setflag (FLAG_EEVEE_OBTAINED)
-    givemon(SPECIES_EEVEE, 5, ITEM_NONE, move1=MOVE_MIRROR_MOVE, move2=MOVE_HELPING_HAND, move3=MOVE_BITE, move4=MOVE_FREEZE_DRY)
-        playfanfare(MUS_OBTAIN_ITEM)
-        msgbox("Eevee joined the party!")
-        call(NicknameEevee)
-        end
 }
 
 movement TrainerFindLeft{
@@ -259,19 +206,15 @@ movement BlockExit{
 
 
 text TakeBall{
-    "It's an abandoned pokeball.\n"
+    "It's an abandoned Poké Ball.\n"
     "Take it?"
 }
 
-text LeftBall{
-    "You decide to leave it."
-}
-
 text EeveeBallUse{
-    "It's a strange, blue eevee.\p"
+    "It's a strange, blue Eevee.\p"
     "Even through the heat of the forest,\n" 
     "cold air radiates off it.\p"
-    "Show Eevee the pokeball?"
+    "Show Eevee the Poké Ball?"
 }
 
 script BurntForest_EventScript_EeveeFollow{
@@ -293,7 +236,7 @@ script BurntForest_EventScript_EeveeTrainer{
     end}
 
     else{
-    msgbox("A pokemon trainer, succumbed to the\n"
+    msgbox("A Pokémon trainer, succumbed to the\n"
     "oppressive heat of the forest.\p"
     "He is not breathing.")
     waitmessage

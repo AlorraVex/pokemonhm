@@ -60,7 +60,7 @@
 #define FLAG_EEVEE_OBTAINED          0x26
 #define FLAG_FREEZE_DRY_DISCOVERED   0x27
 #define FLAG_PASSWORD_ENTERED        0x28
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_BERRY_GARDEN_OPEN       0x29
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
@@ -665,7 +665,7 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
 #define FLAG_HIDDEN_ITEM_BERRY_KEY  0x264
-#define FLAG_BERRY_GARDEN_OPEN      0x265
+#define FLAG_UNUSED_0x265      0x265
 #define FLAG_UNUSED_0x266  0x266 // Unused Flag
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag

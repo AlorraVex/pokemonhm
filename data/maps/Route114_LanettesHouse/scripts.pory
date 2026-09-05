@@ -17,59 +17,52 @@ Route114_LanettesHouse_EventScript_NotebookPage3::
 	msgbox Route114_LanettesHouse_Text_ResearchNotesPage3, MSGBOX_DEFAULT
 	return
 
-Route114_LanettesHouse_EventScript_PC::
-	msgbox Route114_LanettesHouse_Text_EmailFromBill, MSGBOX_SIGN
-	end
-
 Route114_LanettesHouse_Text_ResearchNotesPage1:
 	.string "It's LANETTE's notebook.\p"
 	.string "Meteor Falls has become a popular\n"
 	.string "gathering place for DRAGON trainers.\p"
-	.string "Someone even set up a statue to keep out\n"
-	.string "trainers who don't have a DRAGON move!\p"
+	.string "They have even set up a statue to\n"
+	.string "keep out anyone who doesn't have\l"
+	.string "a DRAGON Pokémon!\p"
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage2:
-	.string "Aspiring DRAGON trainers keep breaking\n"
-	.string "into my berry garden to feed the local\l"
-	.string "NOIBATS.\p"
-	.string "I've put up some fences and hidden the\n"
-	.string "garden's key on a ledge in the mountains.\p"
+	.string "Aspiring DRAGON trainers keep\n"
+	.string "breaking into my berry garden to\l"
+	.string "feed the local NOIBAT.\p"
+	.string "I've put up some fences and hidden\n"
+	.string "the garden's key on a ledge in the\l"
+	.string "mountains.\p"
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage3:
 	.string "A group of people dressed in orange\n"
 	.string "and white have moved into Meteor Falls.\p"
-	.string "They call themselves TEAM RADIANT.\l"
-	.string "Brought a bunch of high-tech equipment\n"
+	.string "They call themselves TEAM RADIANT.\p"
+	.string "There was a lot of high-tech equipment\n"
 	.string "with them. Setting up a lab of some\l"
 	.string "kind? I'd love to get a look at it.\p"
-	.string "PS: The DRAGON trainers are very\n"
-	.string "upset.$"
+	.string "PS: The DRAGON trainers are very upset.$"
 
 Route114_LanettesHouse_Text_ClosedTheNotebook:
 	.string "You closed the notebook.$"
-
-Route114_LanettesHouse_Text_EmailFromBill:
-	.string "Hey Lanette, what's going on over in\n"
-	.string "Hoenn?\p"
-	.string "The news is saying there's a hurricane,\n"
-	.string "or maybe an earthquake?\p"
-	.string "I haven't been able to get in touch\n"
-	.string "with anyone in the region.\p"
-	.string "We're preparing a team to come and\n"
-	.string "investigate whatever is happening.\p"
-	.string "Let me know if there's anything else\n"
-	.string "I can do to help.\p"
-	.string "From BILL$"
 `
 
 mapscripts Route114_LanettesHouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: LanettesHouse_OnTransition
+	MAP_SCRIPT_ON_RESUME: LanettesHouse_OnResume
     }
 
+const FLAG_BERRY_GARDEN_OPEN = 0x29
+
 script LanettesHouse_OnTransition{
-	if(flag(FLAG_BERRY_GARDEN_OPEN) == TRUE){
+	if(flag(FLAG_BERRY_GARDEN_OPEN)){
+	setmetatile(10, 4, 0x296, 0)
+	}
+}
+
+script LanettesHouse_OnResume{
+	if(flag(FLAG_BERRY_GARDEN_OPEN)){
 	setmetatile(10, 4, 0x296, 0)
 	}
 }
@@ -79,7 +72,7 @@ script Route114_EventScript_SecretDoor{
 	if (flag(FLAG_HIDDEN_ITEM_BERRY_KEY) == TRUE){
 		msgbox(OpenDoor, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES){
-			playse(SE_PIN)
+			playse(SE_DOOR)
 			waitse
 			setmetatile(10, 4, 0x296, 0)
 			special(DrawWholeMapView)
@@ -98,7 +91,28 @@ script Route114_EventScript_SecretDoor{
 	end
 }
 
+script Route114_LanettesHouse_EventScript_PC{
+	msgbox(MessageFromBill, MSGBOX_SIGN)
+	end
+
+}
+
 text OpenDoor{
 	"There's a locked door here. Try the\n"
 	"Berry Key?"
+}
+
+text MessageFromBill{
+	"There's an email open on the computer.\p"
+	"“Hey Lanette, what's going on over\n"
+	"in Hoenn?\p"
+	"The news is saying there's a hurricane,\n"
+	"or maybe an earthquake?\p"
+	"I haven't been able to get in touch\n"
+	"with anyone in the region.\p"
+	"We're preparing a team to come and\n"
+	"investigate whatever is happening.\p"
+	"Let me know if there's anything else\n"
+	"I can do to help.\p"
+	"From BILL”"
 }

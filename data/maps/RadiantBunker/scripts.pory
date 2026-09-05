@@ -38,6 +38,8 @@ script RadiantBunker_OnResume {
 
 }
 
+// incomplete
+
 script RadiantBunker_EventScript_Password{
     lockall
     msgbox(Computer, MSGBOX_YESNO)
@@ -66,7 +68,7 @@ script RadiantBunker_EventScript_Starter{
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_PICHU_SPIKY_EARED, 5, ITEM_NONE, move1=MOVE_TAIL_WHIP, move2=MOVE_THUNDERSHOCK, move3=MOVE_SWEET_KISS, move4=MOVE_WISH)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            msgbox("You received a pichu and the bag.")
+            msgbox("You received a Pichu and the Bag.")
             removeobject(1)
             setflag(FLAG_HIDE_STARTER_BAG)
             setflag(FLAG_SYS_BAG_GET)
@@ -149,7 +151,7 @@ text UseThundershock{
 }
 
 text StarterChoice{
-    "There's a pokeball in the bag. 
+    "There's a Poké Ball in the bag. 
     Take it?"
 }
 
