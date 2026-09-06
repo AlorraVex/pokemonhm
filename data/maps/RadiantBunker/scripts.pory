@@ -20,10 +20,6 @@ script RadiantBunker_OnTransition {
         setflashlevel(7)
     }
 
-    if (flag(FLAG_HIDE_STARTER_BAG)) {
-        removeobject(1)
-    }
-
 }
 
 script RadiantBunker_OnResume {
@@ -99,8 +95,8 @@ script RadiantBunker_EventScript_Generator{
         if(var(VAR_RESULT) == YES){
 		    dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Tail Whip", "Thundershock", "Sweet Kiss", "Wish")
             if (var(VAR_RESULT) == 0){
-				msgbox("Pichu whipped the generator with its\n"
-				"tail.\p"
+				msgbox("Pichu whipped the generator\n"
+				"with its tail.\p"
                 "The generator seems unimpressed.")
 				}
 			elif (var(VAR_RESULT) == 2){
@@ -109,8 +105,8 @@ script RadiantBunker_EventScript_Generator{
 				"remains off.")
 				}
 			elif (var(VAR_RESULT) == 3){
-				msgbox("Pichu wished for the generator to turn\n"
-                "on.\p"
+				msgbox("Pichu wished for the generator\n"
+                "to turn on.\p"
                 "Unfortunately, Jirachi did not hear it.")
 				}
 			elif (var(VAR_RESULT) == 1){
@@ -131,6 +127,7 @@ script RadiantBunker_EventScript_Generator{
                 setmetatile(6, 10, 0x2E6, 0)
                 special(DrawWholeMapView)
                 setflag(FLAG_GENERATOR_ON)
+                removeobject(2)
             }
 
         }

@@ -47,6 +47,7 @@ void SetPlayerAvatarStateMask(u8 flags);
 u16 GetPlayerAvatarGraphicsIdByStateId(u8 state);
 u8 GetJumpSpecialMovementAction(u32);
 bool8 PartyHasMonWithSurf(void);
+bool8 PartyHasEeveeOrGlaceon(void);
 bool8 IsPlayerFacingSurfableFishableWater(void);
 bool8 IsPlayerSurfingNorth(void);
 void SetPlayerAvatarWatering(enum Direction direction);
@@ -73,5 +74,6 @@ enum Direction GetLeftSideStairsDirection(enum Direction direction);
 void UpdateSpinData(void);
 void ResetSpinTimer(void);
 bool32 CanTriggerSpinEvolution();
+void CreateIceBridge(void);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

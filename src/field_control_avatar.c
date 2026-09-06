@@ -645,6 +645,14 @@ static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metati
      && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF)
      )
         return EventScript_UseSurf;
+    
+    if (MetatileBehavior_IsIcyWater(metatileBehavior) == TRUE && FlagGet(FLAG_FREEZE_DRY_DISCOVERED) && PartyHasEeveeOrGlaceon() == TRUE
+     )
+        return EventScript_CreateIceBridge;
+
+    if (MetatileBehavior_IsIcyWater(metatileBehavior) == TRUE && PartyHasEeveeOrGlaceon() == FALSE
+     )
+        return EventScript_WaterIsIcy;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE
      && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_WATERFALL)
@@ -1428,3 +1436,4 @@ void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y)
         }
     }
 }
+

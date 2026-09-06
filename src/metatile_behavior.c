@@ -1017,6 +1017,14 @@ bool8 MetatileBehavior_IsWaterfall(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsIcyWater(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_ICY_WATER)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsFortreeBridge(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_FORTREE_BRIDGE)

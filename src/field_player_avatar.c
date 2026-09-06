@@ -35,6 +35,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "constants/metatile_labels.h"
 
 #define NUM_FORCED_MOVEMENTS 22
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -1634,6 +1635,19 @@ bool8 PartyHasMonWithSurf(void)
     return FALSE;
 }
 
+bool8 PartyHasEeveeOrGlaceon(void)
+{
+    u8 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_EEVEE || (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_GLACEON))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool8 IsPlayerSurfingNorth(void)
 {
     if (GetPlayerMovementDirection() == DIR_NORTH && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
@@ -2254,4 +2268,33 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, enum Direction d
     #else
         return FALSE;
     #endif
+}
+
+void CreateIceBridge(void)
+{
+    enum Direction direction = GetPlayerFacingDirection();
+    struct MapPosition position; 
+    
+    GetXYCoordsOneStepInFrontOfPlayer(&position.x, &position.y);
+    while (MetatileBehavior_IsIcyWater(MapGridGetMetatileBehaviorAt(position.x, position.y)) == TRUE)
+    {
+        MapGridSetMetatileIdAt(position.x, position.y, METATILE_General_IceBridgePlaceholder); //replace with real IceBridge tile once made
+        MoveCoords(direction, &position.x, &position.y);
+    }
+
+    DrawWholeMapView();
+
+}
+
+bool32 IsBridgeBuilt(void)
+{
+    s16 x = (VarGet(VAR_ICE_BRIDGE_X) + MAP_OFFSET);
+    s16 y = (VarGet(VAR_ICE_BRIDGE_Y) + MAP_OFFSET);
+    u16 tilebehavior = MapGridGetMetatileBehaviorAt(x, y);
+
+    if(MetatileBehavior_IsIcyWater(tilebehavior) == TRUE)
+        return FALSE;
+
+    return TRUE;
+
 }
