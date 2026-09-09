@@ -102,6 +102,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route114_EventScript_FirstFreezeDry",
       "flag": "FLAG_FREEZE_DRY_DISCOVERED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPIN_CUSHION",
+      "x": 30,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route114_EventScript_SecretDoor",
+      "flag": "FLAG_BERRY_GARDEN_OPEN"
     }
   ],
   "warp_events": [
@@ -132,13 +145,6 @@
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 30,
-      "y": 35,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE114_LANETTES_HOUSE",
-      "dest_warp_id": "2"
     },
     {
       "x": 31,

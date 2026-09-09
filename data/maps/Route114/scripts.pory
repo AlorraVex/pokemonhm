@@ -185,10 +185,20 @@ mapscripts Route114_MapScripts {
     MAP_SCRIPT_ON_RESUME: Route114_OnResume
     }
 
+const FLAG_BERRY_GARDEN_OPEN = 0x29
+
 script Route114_OnTransition{
+	if(flag(FLAG_BERRY_GARDEN_OPEN)){
+	setmetatile(30, 39, 0x001, 0)
+	setmetatile(30, 38, 0x133, 0)
+	}
 }
 
 script Route114_OnResume{
+	if(flag(FLAG_BERRY_GARDEN_OPEN)){
+	setmetatile(30, 39, 0x001, 0)
+	setmetatile(30, 38, 0x133, 0)
+	}
 }
 
 script EventScript_CreateIceBridge{
@@ -420,6 +430,32 @@ script Route114_Trigger_Bridge3Land {
 
 }
 
+script Route114_EventScript_SecretDoor{
+	lockall
+	if (flag(FLAG_HIDDEN_ITEM_BERRY_KEY) == TRUE){
+		msgbox(OpenDoor, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			playse(SE_DOOR)
+			waitse
+			setmetatile(30, 39, 0x001, 0)
+			setmetatile(30, 38, 0x133, 0)
+			removeobject(7)
+			special(DrawWholeMapView)
+			setflag(FLAG_BERRY_GARDEN_OPEN)
+		}
+		else{ 
+		releaseall
+		end
+		}
+	}
+		else {msgbox("The gate is locked.")
+		releaseall
+		end
+		}
+	releaseall
+	end
+}
+
 text MakeBridgeEevee{
 	"The water here is icy.\n"
 	"Have Eevee use Freeze Dry?"
@@ -430,3 +466,6 @@ text MakeBridgeGlaceon{
 	"Have Glaceon use Sheer Cold?"
 }
 
+text OpenDoor{
+	"The gate is locked. Try the Berry Key?"
+}

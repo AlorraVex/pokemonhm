@@ -92,7 +92,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_GETPARTYSIZE                  ScrCmd_getpartysize,                requests_effects=1  @ 0x43
 	script_cmd_table_entry SCR_OP_ADDITEM                       ScrCmd_additem,                     requests_effects=1  @ 0x44
 	script_cmd_table_entry SCR_OP_REMOVEITEM                    ScrCmd_removeitem,                  requests_effects=1  @ 0x45
-	script_cmd_table_entry SCR_OP_CHECKITEMSPACE                ScrCmd_checkitemspace,              requests_effects=1  @ 0x46
+	script_cmd_table_entry SCR_OP_CHECKITEMSPACE                ScrCmd_checkitemspace,              			requests_effects=1  @ 0x46
 	script_cmd_table_entry SCR_OP_CHECKITEM                     ScrCmd_checkitem,                   requests_effects=1  @ 0x47
 	script_cmd_table_entry SCR_OP_CHECKITEMTYPE                 ScrCmd_checkitemtype,               requests_effects=1  @ 0x48
 	script_cmd_table_entry SCR_OP_ADDPCITEM                     ScrCmd_addpcitem,                   requests_effects=1  @ 0x49

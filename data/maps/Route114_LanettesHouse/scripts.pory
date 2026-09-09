@@ -31,8 +31,8 @@ Route114_LanettesHouse_Text_ResearchNotesPage2:
 	.string "breaking into my berry garden to\l"
 	.string "feed the local NOIBAT.\p"
 	.string "I've put up some fences and hidden\n"
-	.string "the garden's key on a ledge in the\l"
-	.string "mountains.\p"
+	.string "the garden's spare key on a ledge\l"
+	.string "in the mountains.\p"
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage3:
@@ -49,57 +49,12 @@ Route114_LanettesHouse_Text_ClosedTheNotebook:
 `
 
 mapscripts Route114_LanettesHouse_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: LanettesHouse_OnTransition
-	MAP_SCRIPT_ON_RESUME: LanettesHouse_OnResume
     }
-
-const FLAG_BERRY_GARDEN_OPEN = 0x29
-
-script LanettesHouse_OnTransition{
-	if(flag(FLAG_BERRY_GARDEN_OPEN)){
-	setmetatile(10, 4, 0x296, 0)
-	}
-}
-
-script LanettesHouse_OnResume{
-	if(flag(FLAG_BERRY_GARDEN_OPEN)){
-	setmetatile(10, 4, 0x296, 0)
-	}
-}
-
-script Route114_EventScript_SecretDoor{
-	lockall
-	if (flag(FLAG_HIDDEN_ITEM_BERRY_KEY) == TRUE){
-		msgbox(OpenDoor, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES){
-			playse(SE_DOOR)
-			waitse
-			setmetatile(10, 4, 0x296, 0)
-			special(DrawWholeMapView)
-			setflag(FLAG_BERRY_GARDEN_OPEN)
-		}
-		else{ 
-		releaseall
-		end
-		}
-	}
-		else {msgbox("There's a locked door here.")
-		releaseall
-		end
-		}
-	releaseall
-	end
-}
 
 script Route114_LanettesHouse_EventScript_PC{
 	msgbox(MessageFromBill, MSGBOX_SIGN)
 	end
 
-}
-
-text OpenDoor{
-	"There's a locked door here. Try the\n"
-	"Berry Key?"
 }
 
 text MessageFromBill{
