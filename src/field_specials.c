@@ -5796,3 +5796,8 @@ bool8 CheckAddCoins(void)
     else
         return TRUE;
 }
+
+void ChooseItemFromBag(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, POCKETS_COUNT, CB2_ReturnToFieldContinueScript);
+}

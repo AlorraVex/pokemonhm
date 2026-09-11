@@ -185,6 +185,7 @@ const u8 *const gBagMenu_ReturnToStrings[] =
     [ITEMMENULOCATION_ITEMPC]              = gText_ThePC,
     [ITEMMENULOCATION_FAVOR_LADY]          = gText_TheField,
     [ITEMMENULOCATION_QUIZ_LADY]           = gText_TheField,
+    [ITEMMENULOCATION_CHOOSE_ITEM]         = gText_TheField,
     [ITEMMENULOCATION_APPRENTICE]          = gText_TheField,
     [ITEMMENULOCATION_WALLY]               = gText_TheBattle,
     [ITEMMENULOCATION_PCBOX]               = gText_ThePC,

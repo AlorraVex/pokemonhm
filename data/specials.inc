@@ -409,6 +409,7 @@ gSpecials::
 	def_special SetQuizLadyState_GivePrize
 	def_special ClearQuizLadyPlayerAnswer
 	def_special Script_QuizLadyOpenBagMenu, waitstate=1
+	def_special ChooseItemFromBag
 	def_special ClearQuizLadyQuestionAndAnswer
 	def_special QuizLadySetCustomQuestion, waitstate=1
 	def_special QuizLadyTakePrizeForCustomQuiz
@@ -642,3 +643,4 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+	def_special ChooseItemFromBag

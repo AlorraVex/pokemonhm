@@ -72,17 +72,18 @@ script BurntForest_Trigger_BlockExit{
 script BurntForest_EeeveeTrainerScene{
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     if(var(VAR_TEMP_0) == 3 && var(VAR_TEMP_1) == 7){
-    lockall
-    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindLeft)
-    waitmovement (0)
-    applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftLeft)
-    waitmovement}
+        lockall
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindLeft)
+        waitmovement (0)
+        applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftLeft)
+        waitmovement
+    }
     else{
-    lockall
-    applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight)
-    waitmovement (0)
-    applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftRight)
-    waitmovement
+        lockall
+        applymovement (OBJ_EVENT_ID_NPC_FOLLOWER, TrainerFindRight)
+        waitmovement (0)
+        applymovement (OBJ_EVENT_ID_PLAYER, PlayerShiftRight)
+        waitmovement
     }
     playmoncry (SPECIES_EEVEE, CRY_MODE_NORMAL)
     waitmoncry

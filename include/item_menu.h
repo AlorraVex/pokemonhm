@@ -15,6 +15,7 @@ enum {
     ITEMMENULOCATION_ITEMPC,
     ITEMMENULOCATION_FAVOR_LADY,
     ITEMMENULOCATION_QUIZ_LADY,
+    ITEMMENULOCATION_CHOOSE_ITEM,
     ITEMMENULOCATION_APPRENTICE,
     ITEMMENULOCATION_WALLY,
     ITEMMENULOCATION_PCBOX,
@@ -99,6 +100,7 @@ extern u16 gSpecialVar_ItemId;
 void CB2_GoToItemDepositMenu(void);
 void FavorLadyOpenBagMenu(void);
 void QuizLadyOpenBagMenu(void);
+void ChooseItemFromBag(void);
 void ApprenticeOpenBagMenu(void);
 void CB2_BagMenuFromBattle(void);
 void UpdatePocketListPosition(u8 pocketId);

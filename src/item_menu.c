@@ -378,6 +378,7 @@ static const TaskFunc sContextMenuFuncs[] = {
     [ITEMMENULOCATION_ITEMPC] =                 Task_ItemContext_Deposit,
     [ITEMMENULOCATION_FAVOR_LADY] =             Task_ItemContext_Normal,
     [ITEMMENULOCATION_QUIZ_LADY] =              Task_ItemContext_Normal,
+    [ITEMMENULOCATION_CHOOSE_ITEM] =            Task_FadeAndCloseBagMenu,
     [ITEMMENULOCATION_APPRENTICE] =             Task_ItemContext_Normal,
     [ITEMMENULOCATION_WALLY] =                  NULL,
     [ITEMMENULOCATION_PCBOX] =                  Task_ItemContext_GiveToPC,
@@ -668,6 +669,8 @@ void GoToBagMenu(u8 location, u8 pocket, MainCallback exitCallback)
             gBagPosition.location == ITEMMENULOCATION_BERRY_BLENDER_CRUSH ||
             gBagPosition.location == ITEMMENULOCATION_BERRY_TREE_MULCH)
             gBagMenu->pocketSwitchDisabled = TRUE;
+        if (gBagPosition.location == ITEMMENULOCATION_CHOOSE_ITEM)
+            gBagMenu->pocketSwitchDisabled = FALSE;
         gBagMenu->newScreenCallback = NULL;
         gBagMenu->toSwapPos = NOT_SWAPPING;
         gBagMenu->pocketScrollArrowsTask = TASK_NONE;
@@ -1665,6 +1668,7 @@ static void OpenContextMenu(u8 taskId)
     case ITEMMENULOCATION_SHOP:
     case ITEMMENULOCATION_BERRY_TREE:
     case ITEMMENULOCATION_ITEMPC:
+    case ITEMMENULOCATION_CHOOSE_ITEM:
     case ITEMMENULOCATION_BERRY_TREE_MULCH:
     default:
         if (MenuHelpers_IsLinkActive() == TRUE || InUnionRoom() == TRUE)

@@ -57,6 +57,13 @@ script Route114_LanettesHouse_EventScript_PC{
 
 }
 
+script Route114_LanettesHouse_PokeBall{
+	lockall
+	giveitem(ITEM_POKE_BALL)
+	releaseall
+	end
+}
+
 text MessageFromBill{
 	"There's an email open on the computer.\p"
 	"“Hey Lanette, what's going on over\n"

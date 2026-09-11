@@ -190,14 +190,14 @@ const FLAG_BERRY_GARDEN_OPEN = 0x29
 script Route114_OnTransition{
 	if(flag(FLAG_BERRY_GARDEN_OPEN)){
 	setmetatile(30, 39, 0x001, 0)
-	setmetatile(30, 38, 0x133, 0)
+	setmetatile(30, 38, 0x133, 1)
 	}
 }
 
 script Route114_OnResume{
 	if(flag(FLAG_BERRY_GARDEN_OPEN)){
 	setmetatile(30, 39, 0x001, 0)
-	setmetatile(30, 38, 0x133, 0)
+	setmetatile(30, 38, 0x133, 1)
 	}
 }
 
@@ -438,7 +438,7 @@ script Route114_EventScript_SecretDoor{
 			playse(SE_DOOR)
 			waitse
 			setmetatile(30, 39, 0x001, 0)
-			setmetatile(30, 38, 0x133, 0)
+			setmetatile(30, 38, 0x133, 1)
 			removeobject(7)
 			special(DrawWholeMapView)
 			setflag(FLAG_BERRY_GARDEN_OPEN)
@@ -456,6 +456,103 @@ script Route114_EventScript_SecretDoor{
 	end
 }
 
+script Route114_EventScript_BerryPedestal{
+	lockall
+	if(flag(FLAG_NOIBAT_BERRY) == FALSE){
+		checkitem (ITEM_PERSIM_BERRY, 1)
+		if (var(VAR_RESULT) == TRUE){
+			msgbox(PlaceItem, MSGBOX_YESNO)
+			if(var(VAR_RESULT) == YES){
+				chooseitem
+				goto_if_eq(VAR_ITEM_ID, ITEM_PERSIM_BERRY, Route114_EventScript_NoibatBerry)
+				goto(Route114_EventScript_WrongItem)
+			}
+			else{
+				msgbox("A stone pedestal. It appears to be\n"
+				"stained with juice.")
+			}
+		}
+	}
+	
+	elif(flag(FLAG_NOIBAT_OBTAINED) == FALSE){
+		goto(Route114_EventScript_NoibatJoin)
+	}
+	else{
+		msgbox("A stone pedestal, stained with juice.")
+	}
+	releaseall
+	end
+}
+
+script Route114_EventScript_NoibatBerry{
+	removeitem(ITEM_PERSIM_BERRY)
+	delay(30)
+	applymovement (LOCALID_NOIBAT, NoibatMove)
+	waitmovement (0)
+	playmoncry (SPECIES_NOIBAT, CRY_MODE_NORMAL)
+	delay(60)
+	msgbox("A Noibat perches on the pedestal\n"
+	"and happily eats the berry.")
+	setflag (FLAG_NOIBAT_BERRY)
+	goto (Route114_EventScript_NoibatJoin)
+}
+
+script Route114_EventScript_NoibatJoin{
+	lockall
+	checkitem (ITEM_POKE_BALL, 1)
+	if(var(VAR_RESULT) == TRUE){
+		msgbox(NoibatJoin, MSGBOX_YESNO)
+		if(var(VAR_RESULT) == YES){
+			playmoncry (SPECIES_NOIBAT, CRY_MODE_NORMAL)
+			removeobject(5)
+			special(DrawWholeMapView)
+			setflag(FLAG_NOIBAT_OBTAINED)
+			givemon(SPECIES_NOIBAT, 5, ITEM_NONE, move1=MOVE_ABSORB, move2=MOVE_DRAGON_BREATH, move3=MOVE_ROOST, move4=MOVE_LEECH_LIFE)
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox("Noibat joined the party!")
+			call(NicknameNoibat)
+		}
+	}
+	else{
+		msgbox("Noibat eyes you closely. It seems\n"
+		"like it wants to join your party, but\l"
+		"you don't have any Poké Balls.")
+	}
+	releaseall
+	end	
+}
+
+script Route114_EventScript_WrongItem{
+	msgbox("Nothing happened.")
+	releaseall
+	end
+}
+
+script NicknameNoibat{
+    msgbox("Give Noibat a nickname?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+    else{
+        releaseall
+        end
+    }
+}
+
+movement NoibatMove{
+	emote_exclamation_mark
+	delay_16
+	walk_left * 3
+	face_up
+}
+
+text NoibatJoin{
+	"Noibat eyes you closely. It seems\n"
+	"like it wants to join you.\p"
+	"Use a Poké Ball?"
+}
+
 text MakeBridgeEevee{
 	"The water here is icy.\n"
 	"Have Eevee use Freeze Dry?"
@@ -468,4 +565,9 @@ text MakeBridgeGlaceon{
 
 text OpenDoor{
 	"The gate is locked. Try the Berry Key?"
+}
+
+text PlaceItem{
+	"The pedestal is stained with juice.\p"
+	"Place an item?"
 }
