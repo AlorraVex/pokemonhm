@@ -129,12 +129,10 @@ script RadiantBunker_EventScript_Generator{
                 setflag(FLAG_GENERATOR_ON)
                 removeobject(2)
             }
-
         }
     releaseall
     end
     }
-
 }
 
 text PowerGenerator{

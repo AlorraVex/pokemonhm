@@ -109,14 +109,20 @@ Route114_LanettesHouse_PokeBall::
 # 61 "data/maps/Route114_LanettesHouse/scripts.pory"
 	lockall
 # 62 "data/maps/Route114_LanettesHouse/scripts.pory"
-	giveitem ITEM_POKE_BALL
+	removeobject 1
 # 63 "data/maps/Route114_LanettesHouse/scripts.pory"
+	special DrawWholeMapView
+# 64 "data/maps/Route114_LanettesHouse/scripts.pory"
+	giveitem ITEM_POKE_BALL
+# 65 "data/maps/Route114_LanettesHouse/scripts.pory"
+	setflag FLAG_ITEM_LANETTES_HOUSE_POKEBALL
+# 66 "data/maps/Route114_LanettesHouse/scripts.pory"
 	releaseall
 	end
 
 
 MessageFromBill::
-# 67 "data/maps/Route114_LanettesHouse/scripts.pory"
+# 70 "data/maps/Route114_LanettesHouse/scripts.pory"
 	.string "There's an email open on the computer.\p"
 	.string "“Hey Lanette, what's going on over\n"
 	.string "in Hoenn?\p"

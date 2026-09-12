@@ -153,7 +153,7 @@ RadiantBunker_EventScript_Generator_2:
 	compare VAR_RESULT, YES
 	goto_if_eq RadiantBunker_EventScript_Generator_6
 RadiantBunker_EventScript_Generator_5:
-# 134 "data/maps/RadiantBunker/scripts.pory"
+# 133 "data/maps/RadiantBunker/scripts.pory"
 	releaseall
 	end
 
@@ -230,38 +230,38 @@ RadiantBunker_EventScript_Generator_11:
 
 
 NicknamePichu::
-# 156 "data/maps/RadiantBunker/scripts.pory"
+# 154 "data/maps/RadiantBunker/scripts.pory"
 	msgbox NicknamePichu_Text_0, MSGBOX_YESNO
-# 157 "data/maps/RadiantBunker/scripts.pory"
+# 155 "data/maps/RadiantBunker/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePichu_1
-# 161 "data/maps/RadiantBunker/scripts.pory"
+# 159 "data/maps/RadiantBunker/scripts.pory"
 	updatefollowingmon
-# 162 "data/maps/RadiantBunker/scripts.pory"
+# 160 "data/maps/RadiantBunker/scripts.pory"
 	releaseall
 	end
 
 NicknamePichu_1:
-# 158 "data/maps/RadiantBunker/scripts.pory"
+# 156 "data/maps/RadiantBunker/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 159 "data/maps/RadiantBunker/scripts.pory"
+# 157 "data/maps/RadiantBunker/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 170 "data/maps/RadiantBunker/scripts.pory"
+# 168 "data/maps/RadiantBunker/scripts.pory"
 	msgbox NicknamePichu_Text_0, MSGBOX_YESNO
-# 171 "data/maps/RadiantBunker/scripts.pory"
+# 169 "data/maps/RadiantBunker/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 174 "data/maps/RadiantBunker/scripts.pory"
+# 172 "data/maps/RadiantBunker/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 172 "data/maps/RadiantBunker/scripts.pory"
+# 170 "data/maps/RadiantBunker/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -314,38 +314,38 @@ RadiantBunker_EventScript_Generator_Text_7:
 	.string "Unfortunately, Jirachi did not hear it.$"
 
 NicknamePichu_Text_0:
-# 156 "data/maps/RadiantBunker/scripts.pory"
+# 154 "data/maps/RadiantBunker/scripts.pory"
 	.string "Give Pichu a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 174 "data/maps/RadiantBunker/scripts.pory"
+# 172 "data/maps/RadiantBunker/scripts.pory"
 	.string "Pichu was transferred to the PC.$"
 
 PowerGenerator::
-# 140 "data/maps/RadiantBunker/scripts.pory"
+# 138 "data/maps/RadiantBunker/scripts.pory"
 	.string "It's an unpowered generator.\n"
 	.string "Have Pichu use a move?$"
 
 UseThundershock::
-# 145 "data/maps/RadiantBunker/scripts.pory"
+# 143 "data/maps/RadiantBunker/scripts.pory"
 	.string "Pichu powered up the generator with\n"
 	.string "Thundershock!$"
 
 StarterChoice::
-# 150 "data/maps/RadiantBunker/scripts.pory"
+# 148 "data/maps/RadiantBunker/scripts.pory"
 	.string "There's a Poké Ball in the bag. \n"
 	.string "Take it?$"
 
 Starter_NotChosen::
-# 178 "data/maps/RadiantBunker/scripts.pory"
+# 176 "data/maps/RadiantBunker/scripts.pory"
 	.string "You decided to leave it.$"
 
 Computer::
-# 182 "data/maps/RadiantBunker/scripts.pory"
+# 180 "data/maps/RadiantBunker/scripts.pory"
 	.string "Teleporter Status: Off\n"
 	.string "Underpass Passage: Closed\p"
 	.string "Enter password?$"
 
 Correct_Password::
-# 188 "data/maps/RadiantBunker/scripts.pory"
+# 186 "data/maps/RadiantBunker/scripts.pory"
 	.string "Eternity$"

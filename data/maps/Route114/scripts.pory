@@ -186,12 +186,23 @@ mapscripts Route114_MapScripts {
     }
 
 const FLAG_BERRY_GARDEN_OPEN = 0x29
+const FLAG_NOIBAT_BERRY = 0x2B
+const FLAG_NOIBAT_OBTAINED = 0x2A
 
 script Route114_OnTransition{
 	if(flag(FLAG_BERRY_GARDEN_OPEN)){
 	setmetatile(30, 39, 0x001, 0)
 	setmetatile(30, 38, 0x133, 1)
 	}
+
+	if(flag(FLAG_NOIBAT_BERRY) == TRUE && flag(FLAG_NOIBAT_OBTAINED) == FALSE){
+		setobjectxyperm(LOCALID_NOIBAT, 20, 62)
+	}
+
+	if(flag(FLAG_TEMP_1) == TRUE){
+		setobjectxyperm(LOCALID_DRAGONSTATUE1, 5, 48)
+	}
+
 }
 
 script Route114_OnResume{
@@ -199,6 +210,15 @@ script Route114_OnResume{
 	setmetatile(30, 39, 0x001, 0)
 	setmetatile(30, 38, 0x133, 1)
 	}
+
+	if(flag(FLAG_NOIBAT_BERRY) == TRUE && flag(FLAG_NOIBAT_OBTAINED) == FALSE){
+		setobjectxyperm(LOCALID_NOIBAT, 20, 62)
+	}
+
+	if(flag(FLAG_TEMP_1) == TRUE){
+		setobjectxyperm(LOCALID_DRAGONSTATUE1, 5, 48)
+	}
+
 }
 
 script EventScript_CreateIceBridge{
@@ -266,8 +286,8 @@ script Route114_EventScript_FirstFreezeDry {
 				"gain advantage on your next d20 test!") 
 				}
 			elif (var(VAR_RESULT) == 2){
-				msgbox("Eevee bites the water.\n"
-				"The water does not respond.")
+				msgbox("Eevee bit the water.\n"
+				"The water did not respond.")
 				}
 			elif (var(VAR_RESULT) == 3){
 			delay(16)
@@ -467,17 +487,20 @@ script Route114_EventScript_BerryPedestal{
 				goto_if_eq(VAR_ITEM_ID, ITEM_PERSIM_BERRY, Route114_EventScript_NoibatBerry)
 				goto(Route114_EventScript_WrongItem)
 			}
-			else{
-				msgbox("A stone pedestal. It appears to be\n"
-				"stained with juice.")
-			}
+
 		}
+
+		else{
+			msgbox("A stone pedestal. It appears to be\n"
+			"stained with juice.")
+		}
+
 	}
 	
 	elif(flag(FLAG_NOIBAT_OBTAINED) == FALSE){
 		goto(Route114_EventScript_NoibatJoin)
 	}
-	else{
+	elif(flag(FLAG_NOIBAT_OBTAINED) == TRUE){
 		msgbox("A stone pedestal, stained with juice.")
 	}
 	releaseall
@@ -487,24 +510,30 @@ script Route114_EventScript_BerryPedestal{
 script Route114_EventScript_NoibatBerry{
 	removeitem(ITEM_PERSIM_BERRY)
 	delay(30)
-	applymovement (LOCALID_NOIBAT, NoibatMove)
+	applymovement(LOCALID_NOIBAT, NoibatMove)
+	playmoncry(SPECIES_NOIBAT, CRY_MODE_NORMAL)
 	waitmovement (0)
-	playmoncry (SPECIES_NOIBAT, CRY_MODE_NORMAL)
+	setobjectxyperm(LOCALID_NOIBAT, 20, 62)
 	delay(60)
 	msgbox("A Noibat perches on the pedestal\n"
 	"and happily eats the berry.")
-	setflag (FLAG_NOIBAT_BERRY)
-	goto (Route114_EventScript_NoibatJoin)
+	playmoncry(SPECIES_NOIBAT, CRY_MODE_NORMAL)
+	delay(16)
+	setflag(FLAG_NOIBAT_BERRY)
+	goto(Route114_EventScript_NoibatJoin)
 }
 
 script Route114_EventScript_NoibatJoin{
 	lockall
+	applymovement(LOCALID_NOIBAT, NoibatFacePlayer)
 	checkitem (ITEM_POKE_BALL, 1)
 	if(var(VAR_RESULT) == TRUE){
 		msgbox(NoibatJoin, MSGBOX_YESNO)
 		if(var(VAR_RESULT) == YES){
 			playmoncry (SPECIES_NOIBAT, CRY_MODE_NORMAL)
+			delay(16)
 			removeobject(5)
+			delay(16)
 			special(DrawWholeMapView)
 			setflag(FLAG_NOIBAT_OBTAINED)
 			givemon(SPECIES_NOIBAT, 5, ITEM_NONE, move1=MOVE_ABSORB, move2=MOVE_DRAGON_BREATH, move3=MOVE_ROOST, move4=MOVE_LEECH_LIFE)
@@ -540,6 +569,101 @@ script NicknameNoibat{
     }
 }
 
+script Route114_EventScript_DragonStatue1{
+    lockall
+    if(flag(FLAG_NOIBAT_OBTAINED) == FALSE){
+        msgbox("A menacing dragon statue blocks the\n"
+		"path to Meteor Falls. Its eyes are\l"
+		"dull and grey.")
+        releaseall
+        end
+    } 
+
+	elif(flag(FLAG_DRAGON_BREATH_DISCOVERED) == FALSE){
+        setvar(VAR_TEMP_0, SPECIES_NOIBAT)
+		specialvar(VAR_RESULT, CheckLeadMonSpecies)
+		if  (var(VAR_RESULT) == TRUE){
+			msgbox("A dragon statue blocks the path.\n" 
+			"Have Noibat use a move?")
+			dynmultichoice(0, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Absorb", "Dragon Breath", "Roost", "Leech Life")
+			if (var(VAR_RESULT) == 0){
+				msgbox("Noibat tried to absorb the statue.\n"
+				"Even though the statue is made of\l"
+				"rock, it had no effect.")
+				}
+
+			elif (var(VAR_RESULT) == 2){
+				msgbox("Noibat found a nook in the statue and\n"
+				"took a nap.")
+				}
+
+			elif (var(VAR_RESULT) == 3){
+				msgbox("Noibat ran a blood test on the statue.\p"
+				"Its white blood cell count is a bit low.")
+				}
+
+			elif (var(VAR_RESULT) == 1){
+			delay(16)
+			playmoncry (SPECIES_NOIBAT, CRY_MODE_NORMAL)
+			waitmoncry
+			delay(8)
+			playse(SE_M_DRAGON_RAGE)
+			msgbox("With proof of Noibat's draconic power,\n"
+			"the statue's eyes glow red, and it\l"
+			"shifts aside.")
+			setflag(FLAG_DRAGON_BREATH_DISCOVERED)
+			setflag(FLAG_TEMP_1)
+			applymovement(LOCALID_DRAGONSTATUE1, StatueShift)
+			setobjectxyperm(LOCALID_DRAGONSTATUE1, 5, 48)
+			delay(16)
+			}
+
+		}
+
+		else{ 
+			msgbox("A menacing dragon statue blocks the\n"
+			"path to Meteor Falls. Its eyes are\l"
+			"dull and grey.")
+			}
+
+	}
+
+	elif(flag(FLAG_DRAGON_BREATH_DISCOVERED) && flag(FLAG_TEMP_1) == TRUE){
+		msgbox("The statue's eyes are glowing red.")
+	}
+
+	elif(flag(FLAG_DRAGON_BREATH_DISCOVERED) == TRUE && flag(FLAG_TEMP_1) == FALSE){
+		checkspecies(SPECIES_NOIBAT)
+		if(var(VAR_RESULT) == TRUE){
+			msgbox(MoveStatueNoibat, MSGBOX_YESNO)
+			delay(16)
+			setflag(FLAG_TEMP_1)
+			applymovement(LOCALID_DRAGONSTATUE1, StatueShift)
+			setobjectxyperm(LOCALID_DRAGONSTATUE1, 5, 48)
+			delay(16)
+		}
+		else{
+			checkspecies(SPECIES_NOIVERN)
+			if(var(VAR_RESULT) == TRUE){
+				msgbox(MoveStatueNoivern, MSGBOX_YESNO)
+				delay(16)
+				setflag(FLAG_TEMP_1)
+				applymovement(LOCALID_DRAGONSTATUE1, StatueShift)
+				setobjectxyperm(LOCALID_DRAGONSTATUE1, 5, 48)
+				delay(16)
+			}
+
+		else{
+			msgbox("A dragon statue blocks the path.")
+		}
+	
+		}
+
+	} 
+	releaseall
+	end
+}
+
 movement NoibatMove{
 	emote_exclamation_mark
 	delay_16
@@ -547,9 +671,28 @@ movement NoibatMove{
 	face_up
 }
 
+movement NoibatFacePlayer{
+	delay_8
+	face_up
+}
+
+movement StatueShift{
+	walk_left
+}
+
+text MoveStatueNoibat{
+	"A dragon statue blocks the path.\p"
+	"Have Noibat use Dragon Breath?"
+}
+
+text MoveStatueNoivern{
+	"A dragon statue blocks the path.\p"
+	"Have Noivern use Dragon Pulse?"
+}
+
 text NoibatJoin{
 	"Noibat eyes you closely. It seems\n"
-	"like it wants to join you.\p"
+	"like it wants to join your party.\p"
 	"Use a Poké Ball?"
 }
 
@@ -568,6 +711,7 @@ text OpenDoor{
 }
 
 text PlaceItem{
-	"The pedestal is stained with juice.\p"
+	"A stone pedestal. It appears to be\n"
+	"stained with juice.\p"
 	"Place an item?"
 }

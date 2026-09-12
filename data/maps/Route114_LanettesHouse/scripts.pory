@@ -59,7 +59,10 @@ script Route114_LanettesHouse_EventScript_PC{
 
 script Route114_LanettesHouse_PokeBall{
 	lockall
+	removeobject(1)
+	special(DrawWholeMapView)
 	giveitem(ITEM_POKE_BALL)
+	setflag(FLAG_ITEM_LANETTES_HOUSE_POKEBALL)
 	releaseall
 	end
 }
